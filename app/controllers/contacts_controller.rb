@@ -6,17 +6,28 @@ class ContactsController < ApplicationController
 
   def create
     
-    @contact = Contact.create(contact_params)
+    if verify_recaptcha
 
-    respond_to do |format|
-      if @contact.save
-       
-        flash[:notice] = "更新成功"
-        format.html { redirect_to contacts_path() }
-        #format.js {render :js => "window.location.href=window.location.href;"}
-      else
-        format.html { redirect_to :back , notice: @contact.errors.full_messages }
+      @contact = Contact.create(contact_params)
+
+      respond_to do |format|
+        if @contact.save
+          
+          DriftersmailerJob.new.async.perform(DriftersMailer, :contact_notice, @contact)
+          
+          flash[:notice] = "更新成功"
+          format.html { redirect_to contacts_path() }
+        else
+          @contact = Contact.new
+          format.html { render :index , notice: @contact.errors.full_messages }
+        end
       end
+    
+    else
+      @contact = Contact.new
+      flash.now[:alert] = "驗證碼錯誤"
+      flash.delete :recaptcha_error
+      render :index
     end
 
   end
