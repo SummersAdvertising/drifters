@@ -1,9 +1,11 @@
 Contact index
 <% @contacts.each do |contact| %>
   <div style:'float:left;'>
-  <%= contact.name %> = <%= contact.subject %> = <%= contact.email %>
-  <%= contact.phone %><br>
-  <%= contact.content %>
+  name:<%= contact.name %><br>
+  email:<%= contact.email %><br>
+  subject:<%= contact.subject.join(',') %><br>
+  phone:<%= contact.phone %><br>
+  content:<%= contact.content %><br>
   </div>
   <hr>
 <% end %>

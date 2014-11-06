@@ -9,19 +9,19 @@ Rails.application.routes.draw do
     end
   end
 
-  # resources :contacts, only: [:index, :create]
+  resources :contacts, only: [:index, :create]
 
-  # namespace :admin do
+  namespace :admin do
 
-  #   authenticated :admin do
-  #     root "departures#index"#, :as => :authenticated_root
-  #   end
+    authenticated :admin do
+      root "departures#index"#, :as => :authenticated_root
+    end
 
-  #   resources :contacts, only: [:index]
+    resources :contacts, only: [:index]
 
-  #   resources :departures
+    resources :departures
     
-  # end
+  end
 
   get '(*url)'   => 'errors#index'
   

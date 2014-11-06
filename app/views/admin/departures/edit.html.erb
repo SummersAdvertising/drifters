@@ -19,6 +19,14 @@
       </td>
     </tr>
     <tr>
+      <td valign="top">Tour：</td>
+      <td colspan="4">
+        <%= f.select :tour_id, options_from_collection_for_select(@tours ,
+              "id", "name" ) ,{:prompt => '-- 請選擇 --'}, class: 'form-control' %>
+              <br>
+      </td>
+    </tr>
+    <tr>
       <td>
         <%= f.submit '送出' %>
       </td>

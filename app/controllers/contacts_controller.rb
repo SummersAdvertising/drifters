@@ -3,6 +3,7 @@ class ContactsController < ApplicationController
   #new business contact
   def index
     @contact = Contact.new()
+    @tours = Tour.order(created_at: :desc)
   end
 
   def create
@@ -20,6 +21,7 @@ class ContactsController < ApplicationController
           format.html { redirect_to contacts_path() }
         else
           @contact = Contact.new
+          @tours = Tour.order(created_at: :desc)
           format.html { render :index , notice: @contact.errors.full_messages }
         end
       end
@@ -37,6 +39,6 @@ class ContactsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def contact_params  
-    params.require(:contact).permit(:subject, :name, :email, :phone, :content)
+    params.require(:contact).permit({:subject =>[]}, :name, :email, :phone, :content)
   end
 end

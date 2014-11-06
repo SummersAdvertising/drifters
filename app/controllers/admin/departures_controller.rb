@@ -9,6 +9,7 @@ class Admin::DeparturesController < AdminController
 
   def new
     @departure = Departure.new
+    @tours = Tour.order(created_at: :desc)
   end
 
   def create
@@ -26,7 +27,7 @@ class Admin::DeparturesController < AdminController
   end
   
   def edit 
-    
+    @tours = Tour.order(created_at: :desc)
   end
 
   def update
@@ -50,7 +51,7 @@ class Admin::DeparturesController < AdminController
   end
 
   def departure_params
-    params.require(:departure).permit(:name, :filter_type, :url)
+    params.require(:departure).permit(:name, :filter_type, :url, :tour_id)
   end
 
 end

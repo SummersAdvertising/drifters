@@ -1,7 +1,8 @@
 Departure index <%= link_to("New", new_admin_departure_path) %> <br>
 <% @departures.each do |departure| %>
-  <%= departure.name %> = 
-  <%= departure.filter_type %> = 
+  name:<%= departure.name %> = 
+  type:<%= departure.filter_type %> = 
+  tour:<%= departure.tour.name %> = 
   <%= departure.url %> 
   <%= link_to("Edit", edit_admin_departure_path(departure)) %>||
   <%= link_to("刪除", admin_departure_path(departure), :method => :delete, :data => {:confirm => "確定刪除？"}, class: "delete") %>
