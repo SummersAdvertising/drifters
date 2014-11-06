@@ -1,3 +1,4 @@
+#encoding: utf-8
 class ContactsController < ApplicationController
   #new business contact
   def index
@@ -15,7 +16,7 @@ class ContactsController < ApplicationController
           
           DriftersmailerJob.new.async.perform(DriftersMailer, :contact_notice, @contact)
           
-          flash[:notice] = "更新成功"
+          flash[:notice] = "留言已送出"
           format.html { redirect_to contacts_path() }
         else
           @contact = Contact.new
