@@ -17,6 +17,8 @@ Rails.application.routes.draw do
       root "departures#index"#, :as => :authenticated_root
     end
 
+    resources :admins 
+
     resources :contacts, only: [:index]
 
     resources :departures
