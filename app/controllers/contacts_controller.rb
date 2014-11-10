@@ -28,6 +28,7 @@ class ContactsController < ApplicationController
     
     else
       @contact = Contact.new
+      @tours = Tour.order(created_at: :desc)
       flash.now[:alert] = "驗證碼錯誤"
       flash.delete :recaptcha_error
       render :index
