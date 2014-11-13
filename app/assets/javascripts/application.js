@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.remotipart
-//= require jquery.ui.sortable
+//= require jquery-ui/sortable
+//= require alertify
 //= require turbolinks
 //= require_tree .

@@ -54,14 +54,14 @@ class Admin::AdminsController < AdminController
             else
               @admins = Admin.all
 
-              messages = ''
+              # messages = ''
 
-              @admin.errors.messages.each do | m |
-                  messages += '<br />' + (m[1][1].nil? ? m[1][0].to_s : m[1][1].to_s)
+              # # @admin.errors.messages.each do | m |
+              # #     messages += '<br />' + (m[1][1].nil? ? m[1][0].to_s : m[1][1].to_s)
 
-              end
+              # # end
 
-              flash[ :alert ] = "新增使用者失敗，請檢查以下訊息：<p>#{messages}</p>"
+              flash[ :alert ] = "新增使用者失敗，請檢查以下訊息：<p>#{@admin.errors.messages.values.flatten.join('<br />')}</p>"
 
               format.html { render :index  }
             end

@@ -20,9 +20,10 @@ class ContactsController < ApplicationController
           flash[:notice] = "留言已送出"
           format.html { redirect_to contacts_path() }
         else
-          @contact = Contact.new
+          
           @tours = Tour.order(created_at: :desc)
-          format.html { render :index , notice: @contact.errors.full_messages }
+          flash.now[:notice] = @contact.errors.messages.values.flatten.join('<br />')
+          format.html { render :index }
         end
       end
     

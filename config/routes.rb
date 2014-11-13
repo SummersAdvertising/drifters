@@ -19,7 +19,11 @@ Rails.application.routes.draw do
 
     resources :admins 
 
-    resources :contacts, only: [:index]
+    resources :contacts, :only => [:index, :update] do
+      collection do 
+        get 'history', action: 'history'
+      end
+    end
 
     resources :departures
     
