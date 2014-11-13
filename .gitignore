@@ -51,3 +51,5 @@ database.yml
 
 /public/uploads
 /public/assets/*
+
+/old_cap
