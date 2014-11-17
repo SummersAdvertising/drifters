@@ -17,8 +17,17 @@
             <td width="7%"></td>
             <td width="53%">
               姓名：<%= f.text_field :name %><br>
+              性別：
+              <% @genders.each do | gender | %>
+                <%= f.radio_button :gender, gender[0] , :class => 'radio' %> 
+                <label>
+                  <%= gender[1] %>
+                </label>
+              <% end %><br>
               電話：<%= f.text_field :phone %><br>
               email：<%= f.text_field :email %><br>
+              地址：<%= f.text_area :address %><br>
+              出發時間：<%= f.text_area :departure_date %><br>
             </td>
           </tr>
           <tr>

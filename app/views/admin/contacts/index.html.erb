@@ -16,10 +16,13 @@
           <td width="6%" class="icon"></td>
           <td width="21%"><span class="time"><%= contact.created_at.strftime("%Y-%m-%d %H:%M") %></span><br>
             <%= contact.name %><a class="email"><img src="/images/admin/msg.png">
-            <p><%= contact.email %></p></a></td>
+            <p><%= contact.email %></p></a><%= contact.gender %></td>
           <td width="60%">
           <h6><%= contact.subject %></h6>
-          <p><%= contact.content %></p></td>
+          <p><%= contact.content %></p>
+          <p><%= contact.address %></p>
+          <p><%= contact.departure_date %></p>
+          </td>
           <td width="13%">
             <div class="tool">
               <%= get_contact_status(contact) %><%# contacts_helper %>
