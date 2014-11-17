@@ -9,7 +9,7 @@ class Admin::DeparturesController < AdminController
 
   def new
     @departure = Departure.new
-    @tours = Tour.order(created_at: :desc)
+    @tours = Tour.order(:ranking)
   end
 
   def create

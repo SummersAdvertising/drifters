@@ -24,20 +24,22 @@
 
 <header>
   <section class="container">
-       <% Tour.where(en_name: 'the_tour_name').includes(:departures).order(:ranking).each do |tour| %>
-        <%= tour.name %> = <%= tour.en_name %> = <%= tour.ranking %><br>
-        <% if tour.departures %>
-          <% tour.departures.each do |departure| %>
-            <%= departure.name %> = <%= get_departure_type(departure) %>
-          <% end %>
-        <% end %>
-        <hr>
-       <% end %>
+       
   </section>  
 </header>
 
 <article>  
-  Drifters - index<br>
+  Drifters - index<br><br><br>
+  <% Tour.includes(:departures).order(:ranking).each do |tour| %> <%#.where(en_name: 'Kruger_Park_5_day')%>
+    <%= tour.name %> = <%= tour.en_name %> = <%= tour.ranking %><br>
+    <% if tour.departures %>
+      <% tour.departures.each do |departure| %>
+        <%= departure.name %> = <%= get_departure_type(departure) %><br>
+      <% end %>
+    <% end %>
+    <hr>
+  <% end %>
+  
 </article>
 <footer>
   
