@@ -44,10 +44,9 @@
   <!--form-->
   <div class="button"> 
     <%= link_to image_tag("/images/admin/left.png")+"返回", admin_departures_path(), class: "left" %>
-    <%= f.submit '儲存', class: 'right highlight' %>
-    <%# content_tag :button, type: :submit, class: 'right highlight' do %>
-        <!-- 儲存<img src="/images/admin/save.png"> -->
-    <%# end %>
+    <%= content_tag :button, type: :submit, class: 'right highlight' do %>
+      儲存<img src="/images/admin/save.png">
+    <% end %>
   </div>
   <% end %>  
   

@@ -19,6 +19,7 @@ class Admin::DeparturesController < AdminController
     if @departure.save
         format.html { redirect_to admin_departures_path(), notice: 'successfully created.' }
       else
+        @tours = Tour.order(:ranking)
         flash.now[:notice] = @departure.errors.full_messages 
         format.html { render :new }
       end
