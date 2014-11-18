@@ -1,7 +1,7 @@
 #encoding: utf-8
 class Admin::DeparturesController < AdminController
   
-  before_action :set_departure, only: [:edit, :update]
+  before_action :set_departure, only: [:edit, :update, :destroy]
 
   def index
     @departures = Departure.all.page(params[:page])
@@ -43,6 +43,13 @@ class Admin::DeparturesController < AdminController
         format.html { render :edit }
       end      
     end
+  end
+
+  def destroy
+
+    @departure.destroy
+    
+    redirect_to :back
   end
 
   private

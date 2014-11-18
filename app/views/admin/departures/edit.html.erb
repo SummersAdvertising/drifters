@@ -5,8 +5,9 @@
   </nav>
 </header>
 <article>
-  <div class="form">
+  
     <%= form_for(@departure, :url => admin_departure_path(@departure), html: { id: "patchthisdeparture" } ) do |f| %>
+    <div class="form">
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
           <td width="7%">名稱：</td>
@@ -39,17 +40,19 @@
           </td>
         </tr>
       </table>
-    
-  </div>
+    </div>
   <!--form-->
-
   <div class="button"> 
     <%= link_to image_tag("/images/admin/left.png")+"返回", admin_departures_path(), class: "left" %>
-    <%= content_tag :button, type: :submit, class: 'right highlight' do %>
-        儲存<img src="/images/admin/save.png">
-    <% end %>
+    <%= f.submit '儲存', class: 'right highlight' %>
+    <%# content_tag :button, type: :submit, class: 'right highlight' do %>
+        <!-- 儲存<img src="/images/admin/save.png"> -->
+    <%# end %>
   </div>
-  <% end %>
+  <% end %>  
+  
+
+  
 </article>
 
 <script type="text/javascript">
