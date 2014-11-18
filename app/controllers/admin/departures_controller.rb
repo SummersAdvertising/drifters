@@ -36,10 +36,11 @@ class Admin::DeparturesController < AdminController
     
     respond_to do |format|
       if @departure.save
-        format.html { redirect_to :back, notice: '更新成功' }
-        #format.html { redirect_to admin_product_cate_product_path(Departure.product_cate_id, Departure) }
+        format.html { redirect_to edit_admin_departure_path(@departure), notice: '更新成功' }
       else
-        format.html { render :back, notice: @departure.errors.full_messages }
+        @tours = Tour.order(created_at: :desc)
+        flash.now[:notice] = @departure.errors.full_messages
+        format.html { render :edit }
       end      
     end
   end
