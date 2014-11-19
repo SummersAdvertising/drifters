@@ -16,7 +16,7 @@ class Admin::DeparturesController < AdminController
     @departure = Departure.new(departure_params)
 
     respond_to do |format|
-    if @departure.save
+      if @departure.save
         format.html { redirect_to admin_departures_path(), notice: 'successfully created.' }
       else
         @tours = Tour.order(:ranking)
