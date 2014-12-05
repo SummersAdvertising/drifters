@@ -45,7 +45,7 @@
           </li>
           <li><a href="#">探險行程</a></li>
           <li><a href="#">冒險行程</a></li>
-          <li><%= link_to "立刻報名", contacts_path %></li>
+          <li><%= link_to "立刻報名", contacts_path, 'data-no-turbolink' => true %></li>
         </ul>
       </div>
     </nav>
@@ -58,7 +58,7 @@
 <footer>
   <div class="container row">
     <div class="col-sm-3 col-sm-offset-2" id="link">
-      <div id="link-1"> <%= link_to "立刻報名", contacts_path %> </div>
+      <div id="link-1"> <%= link_to "立刻報名", contacts_path, 'data-no-turbolink' => true %> </div>
       <div id="link-2"> <a href="#"><img src="/images/fot-06.gif" class="img-responsive"><br>
         Flickr</a><a href="#"><img src="/images/fot-07.gif" class="img-responsive"><br>
         Facebook</a> </div>
