@@ -25,7 +25,7 @@ class Contact < ActiveRecord::Base
   private
     def sanitize_content
       self.name = Sanitize.fragment(self.name, Sanitize::Config::DEFAULT)
-      self.subject = Sanitize.fragment(self.subject, Sanitize::Config::DEFAULT)
+      # self.subject = Sanitize.fragment(self.subject, Sanitize::Config::DEFAULT)
       self.content = Sanitize.fragment(self.content, Sanitize::Config::DEFAULT)
     end
 

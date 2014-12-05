@@ -1,50 +1,121 @@
-  <article>
-    <div class="form">
-      <%= form_for(@contact, :url => contacts_path(), html: { id: "newthiscontact" } ) do |f| %>
-        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-          <tr>
-            <td width="7%"></td>
-            <td width="31%">
-              主旨：<br>
-              <% @tours.each_with_index do | tour, index | %>
-                <% if index <= 1 %>
-                  <label>
-                  <%= f.check_box :subject, { :multiple => true, :name => "contact[subject][]" }, tour.name, nil %> 
-                    <%= tour.name %><br>
-                  </label>
-                <% end %>
+<article>
+  <div class="container">
+    <ul id="tab">
+      <li><a href="#form">立即報名</a></li>
+      <li><a href="#date">當地出發日期與空位</a></li>
+    </ul>
+    <div id="content" class="row">
+    <div class="col-md-10 col-md-offset-1">
+      <section id="form">        
+          <h3>報名表<span>＊號為必填</span></h3>
+          <p>收到您的資料後，我們將儘快與您聯絡，謝謝。</p>
+          <%= form_for(@contact, :url => contacts_path(), html: { id: "newthiscontact" } ) do |f| %>
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+              <tr>
+                <td width="15%">姓名 <span>*</span></td>
+                <td width="85%"><%= f.text_field :name, class: 'text' %></td>
+              </tr>
+              <tr class="no-border">
+                <td>性別</td>
+                <td>
+                  <% @genders.each do | gender | %>
+                    <%= f.radio_button :gender, gender[0] , :class => 'radio' %> 
+                    <label class="checkbox-inline">
+                      <%= gender[1] %>
+                    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td>連絡電話 <span>*</span></td>
+                <td><%= f.text_field :phone, class: 'text' %></td>
+              </tr>
+              <tr>
+                <td>Email <span><span>*</span></span></td>
+                <td><%= f.text_field :email, class: 'text' %></td>
+              </tr>
+              <tr>
+                <td>通訊地址</td>
+                <td><%= f.text_area :address, class: 'text' %></td>
+              </tr>
+              <tr class="no-border">
+                <td colspan="2"> 欲參加的行程 <span>* 可複選</span><br>
+                  <% @tours.each_with_index do | tour, index | %>
+                    <% if index <= 1 %>
+                      <label class="checkbox-inline">
+                      <%= f.check_box :subject, { :multiple => true, :name => "contact[subject][]" }, tour.name, nil %> 
+                        <%= tour.name %>
+                      </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    <% end %>
+                  <% end %>
+                </td>
+              </tr>
+              <tr>
+                <td>出發日期</td>
+                <td><%= f.text_field :departure_date, class: 'text' %></td>
+              </tr>
+              <tr class="no-border">
+                <td colspan="2"><%= f.text_area :content %></td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <%= recaptcha_tags :display => { :theme => "clean" } %>
+                </td>
+              </tr>
+              <tr class="no-border" align="center">
+                <td colspan="2">
+                  <%= f.submit '送出資料' , class: "btn btn-default" %>
+                </td>
+              </tr>
+            </table>
+          <% end %>
+      </section>
+      <section id="date">
+        <div id="accordion">
+          <% Tour.order(:ranking).each_with_index do | tour, index | %>
+            <% if index <= 1 %>
+              
+              <% Departure.where(tour_id: tour.id).order(:ranking).each do | departure | %>
+                <h3><%= tour.name %></h3>
+                <div>
+                  <p>所有日期都是根據當地出發地，並非從台灣出發<br>白色欄位內則為當次剩餘座位數量</p>
+                  <p><%= departure.url %></p>
+                  <div class="row">
+                    <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+                  </div>
+                </div> 
               <% end %>
-            </td>
-            <td width="2%">&nbsp;</td>
-            <td width="7%"></td>
-            <td width="53%">
-              姓名：<%= f.text_field :name %><br>
-              性別：
-              <% @genders.each do | gender | %>
-                <%= f.radio_button :gender, gender[0] , :class => 'radio' %> 
-                <label>
-                  <%= gender[1] %>
-                </label>
-              <% end %><br>
-              電話：<%= f.text_field :phone %><br>
-              email：<%= f.text_field :email %><br>
-              地址：<%= f.text_area :address %><br>
-              出發時間：<%= f.text_area :departure_date %><br>
-            </td>
-          </tr>
-          <tr>
-            <td valign="top">內容：</td>
-            <td colspan="4">
-              內容：<%= f.text_area :content, id: "textarea" %><br>
-            </td>
-          </tr>
-          <tr>
-            <td>
-              <%= recaptcha_tags :display => { :theme => "clean" } %>
-              <%= f.submit '送出' %>
-            </td>
-          </tr>
-        </table>
-      <% end %>
+
+            <% end %>
+          <% end %>
+
+        </div><!--accordion-->
+      </section>
+      </div>
     </div>
-  </article>
+  </div>
+</article>
+<script>
+  $(document).ready(function(){
+    $('#article-2').parallax({offsetY:-300,speedFactor:.3}); 
+    $('#article-4').parallax({offsetY:-800,speedFactor:.3}); 
+    $("#accordion").accordion({
+      heightStyle: "content"
+    });
+
+    $(function(){ 
+      var _showTab = 0;
+      var $defaultLi = $('#tab li').eq(_showTab).addClass('active');
+      $($defaultLi.find('a').attr('href')).siblings().hide();
+      $('#tab li').click(function() {   
+        var $this = $(this),
+          _clickTab = $this.find('a').attr('href');   
+        $this.addClass('active').siblings('.active').removeClass('active');   
+        $(_clickTab).stop(false, true).fadeIn().siblings().hide(); 
+        return false;
+        }).find('a').focus(function(){
+          this.blur();
+      });
+    });    
+  }); 
+</script>
