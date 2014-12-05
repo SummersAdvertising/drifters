@@ -1,5 +1,5 @@
 <header>
-  <h2 class="left">Departures</h2>
+  <h2 class="left">Departures/ <span> drag-and-drop to reorder </span></h2>
 </header>
 
 <article>
@@ -8,18 +8,18 @@
       
     </h3>
     <div class="button right">
-      <%= link_to new_admin_departure_path, class: 'right highlight toggle_new_category' do %>
+      <%= link_to new_admin_tour_departure_path, class: 'right highlight toggle_new_category' do %>
         New<img src="/images/admin/add_folder.png">
       <% end %>
     </div>
   </div>
 
   <div class="list">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <table id='dragable_container' width="100%" border="0" cellspacing="0" cellpadding="0">
       
       <% @departures.each do |departure| %>
       
-        <tr>
+        <tr <%= "id=Departurecontainer_#{departure.id.to_s}" %> class='dragable' >
           <td width="88%">
             name:<%= departure.name %><br>
             區間：<%= get_departure_type(departure) %><br>
@@ -28,8 +28,8 @@
           </td>
           <td width="12%">
             <div class="tool">
-              <%= link_to "", edit_admin_departure_path(departure), class: 'edit'  %>
-              <%= link_to "", admin_departure_path(departure), :method => :delete, :data => {:confirm => "確定刪除？"}, class: "delete" %>
+              <%= link_to "", edit_admin_tour_departure_path(departure.tour, departure), class: 'edit'  %>
+              <%= link_to "", admin_tour_departure_path(departure.tour,departure), :method => :delete, :data => {:confirm => "確定刪除？"}, class: "delete" %>
             </div>
           </td>
         </tr>
@@ -37,16 +37,59 @@
       <% end %>
 
     </table>
-  </div>
-
-  <div class= "page">
-    <%= paginate @departures ,:window => 2 %>
+    <div class="button"> 
+      <%= link_to image_tag("/images/admin/left.png")+"返回", admin_tours_path(), class: "left" %>
+    </div>
   </div>
   
 </article>
+ <script>
+  $(function() {
+    var prevEvent = null;
+      $( "#dragable_container" ).sortable({
+        items: ".dragable" ,
+        placeholder: "ui-state-highlight",
+        update: function( event, ui ) {
+            
+          if(event.timeStamp == prevEvent){
+            return null;
+          }
+          
+          prevEvent = event.timeStamp;  
+          var newRankings_array = $('#dragable_container').sortable('toArray');
+          var orderSet = [];
+          $.each(newRankings_array, function( index, value){
+                orderSet.push(value.replace("Departurecontainer_",""));
+            });
+            var order2Push = JSON.stringify(orderSet);
+            
+            $.ajaxSetup({
+              headers: {
+                  'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+            }
+          });
 
-  
-  
-  
+          // reorder 
+          $.ajax({
+            type: "PATCH",
+            url: "/admin/departures/"+orderSet[0]+"/reorder",
+            data: { departures: {  reorderset: orderSet } },
+            success: function(data){
 
+              alertify['success'](data[0][1], 2000);
+              
+              return false   
+            },
+            error: function(data){
+            
+              return false  
+            }
+          });
 
+        }
+      });
+      
+        
+      $( "#dragable_container" ).disableSelection();
+    });  
+  </script>

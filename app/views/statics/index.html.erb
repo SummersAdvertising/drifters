@@ -29,16 +29,10 @@
 </header>
 
 <article>  
-  Drifters - index<br><br><br>
-  <% Tour.includes(:departures).order(:ranking).each do |tour| %> <%#.where(en_name: 'Kruger_Park_5_day')%>
-    <%= tour.name %> = <%= tour.en_name %> = <%= tour.ranking %><br>
-    <% if tour.departures %>
-      <% tour.departures.each do |departure| %>
-        <%= departure.name %> = <%= get_departure_type(departure) %><br>
-      <% end %>
-    <% end %>
-    <hr>
-  <% end %>
+
+  <%= link_to "KrugerPark5day", page_pages_path('KrugerPark5day') %><br>
+  <%= link_to "SouthAfrica18day", page_pages_path('SouthAfrica18day') %><br>
+  <%= link_to "All Tours", page_pages_path('departures') %>
   
 </article>
 <footer>

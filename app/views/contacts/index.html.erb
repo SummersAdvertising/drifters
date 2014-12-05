@@ -6,12 +6,14 @@
             <td width="7%"></td>
             <td width="31%">
               主旨：<br>
-               <% @tours.each do | tour | %>
+              <% @tours.each_with_index do | tour, index | %>
+                <% if index <= 1 %>
                   <label>
                   <%= f.check_box :subject, { :multiple => true, :name => "contact[subject][]" }, tour.name, nil %> 
                     <%= tour.name %><br>
                   </label>
                 <% end %>
+              <% end %>
             </td>
             <td width="2%">&nbsp;</td>
             <td width="7%"></td>

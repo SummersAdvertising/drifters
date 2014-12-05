@@ -11,7 +11,7 @@ class StaticsController < ApplicationController
   end
 
   def show
-  
+    p params[:page]
     if params[ :page ].nil?
       redirect_to :index
     end

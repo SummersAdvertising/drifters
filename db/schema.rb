@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141126081928) do
+ActiveRecord::Schema.define(version: 20141205033056) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20141126081928) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tour_id"
+    t.integer  "ranking",     default: 999
   end
 
   add_index "departures", ["tour_id"], name: "index_departures_on_tour_id"

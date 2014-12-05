@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   namespace :admin do
 
     authenticated :admin do
-      root "departures#index"#, :as => :authenticated_root
+      root "tours#index"#, :as => :authenticated_root
     end
 
     resources :admins 
@@ -25,10 +25,18 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :departures
-    
+    resources :tours do 
+      resources :departures
+    end
+
+    resources :departures do 
+      member do
+        patch 'reorder' , :action => 'reorder'
+      end 
+    end
+
   end
 
-  get '(*url)'   => 'errors#index'
+  # get '(*url)'   => 'errors#index'
   
 end

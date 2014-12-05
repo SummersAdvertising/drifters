@@ -1,0 +1,4 @@
+<h1>KrugerPark5day</h1>
+<% Departure.where(tour_id: Tour.where(en_name: 'Kruger_Park_5_day') ).order(:ranking).each do |departure | %>
+  <%= departure.url %><br>
+<% end %>
