@@ -1,0 +1,114 @@
+/*-----------------------------------------------------------------------參數---*/
+
+@import "global";
+
+/*-----------------------------------------------------------------------頁首---*/
+
+#banner{
+	background-image:url(../images/lib-01.jpg);
+	background-size:cover;
+	.background;
+	height:200px;
+	@media(max-width: @sm-device) {
+		height:100px;
+	}
+}
+
+/*-----------------------------------------------------------------------頁身---*/
+
+article{
+	section{
+		padding:10% 0;
+		@media(max-width: @sm-device) {
+			padding:15% 0;
+		}
+	}
+	h3{
+		font:900 1.3em @font-family;
+		color:#fee343;
+		letter-spacing: .2em;
+		line-height: 1.7em;
+		border-bottom:2px solid #fee343;
+		display:inline;
+		padding:0 0 5px 0;
+	}
+	p{
+		line-height:2.5em;
+	}
+	#article-1{
+		background:url(../images/lib-02.jpg);
+		color:#f3e9de;
+		h4{
+			font:300 4.5em @font-family;
+			letter-spacing: .1em;
+		}
+		p{
+			margin:5% 15% 0 15%;
+			@media(max-width: @sm-device) {
+				margin:5% 0 0 0;
+			}
+		}
+		img{
+			display:inline;
+			margin:0 0 5% 0 
+		}
+	}
+	#article-2{
+		background-image:url(../images/lib-06.jpg);
+		.background;
+		@media(max-width: @sm-device) {
+			background:#D1C0A6;
+		}
+		img{
+			position:absolute;
+			right:0;
+			top:-250px;
+			@media(max-width: 1280px) {
+				top:-200px;
+				max-width:80%;
+			}
+			@media(max-width: @md-device) {
+				top:-150px;
+				max-width:90%;
+			}
+			@media(max-width: @sm-device) {
+				position:static;
+				display:inline;
+				margin:5% 0 0 0
+			}
+		}
+	}
+	#article-3{
+		background:#EAE3D8;
+		h4{
+			font:300 3em @font-family;
+			letter-spacing: .1em;
+			color:#59493F;
+			border-bottom:1px solid #59493F;
+			display:inline;
+			padding:0 50px 5px 50px;
+			@media(max-width: @sm-device) {
+				display:block;
+				padding:0 0 5px 0;
+			}
+		}
+		h5{
+			font:900 3em verdana;
+			color:#d1c0a5
+		}
+		blockquote{
+			background:url(../images/lib-08.png) 0 15px no-repeat;
+			font-size:1.1em;
+			line-height:2.5em;
+			padding:0 0 0 60px;
+			border:none;
+			color:#996C33;
+		}
+		img{margin:5% 0 0 0;}
+	}
+	#article-4{
+		background-image:url(../images/lib-07.jpg);
+		.background;
+	}
+}
+

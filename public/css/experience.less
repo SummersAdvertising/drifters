@@ -1,0 +1,119 @@
+/*-----------------------------------------------------------------------參數---*/
+
+@import "global";
+
+/*-----------------------------------------------------------------------頁首---*/
+
+#banner{
+	background-image:url(../images/exp-01.jpg);
+	background-size:cover;
+	.background;
+	height:200px;
+	@media(max-width: @sm-device) {
+		height:100px;
+	}
+}
+
+/*-----------------------------------------------------------------------頁身---*/
+
+article{
+	section{
+		padding:10% 0;
+		@media(max-width: @sm-device) {
+			padding:15% 0;
+		}
+	}
+	h3{
+		font:900 1.3em @font-family;
+		color:#fee343;
+		letter-spacing: .2em;
+		line-height: 1.7em;
+		border-bottom:2px solid #fee343;
+		display:inline;
+		padding:0 0 5px 0;
+	}
+	p{
+		line-height:2.5em;
+	}
+	#article-1{
+		background:url(../images/lib-02.jpg);
+		color:#f3e9de;
+		h4{
+			font:300 4.5em @font-family;
+			letter-spacing: .1em;
+		}
+		p{
+			margin:5% 15% 0 15%;
+			@media(max-width: @sm-device) {
+				margin:5% 0 0 0;
+			}
+		}
+		img{
+			display:inline;
+			margin:0 0 5% 0 
+		}
+	}
+	#article-2{
+		background-image:url(../images/exp-04.jpg);
+		.background;
+		color:#eae3d8;
+		@media(max-width: @sm-device) {
+			background:#D1C0A6;
+			color:#3C3431;
+		}
+		img{
+			position:absolute;
+			right:0;
+			top:-250px;
+			@media(max-width: 1280px) {
+				top:-200px;
+				max-width:80%;
+			}
+			@media(max-width: @md-device) {
+				top:-150px;
+				max-width:90%;
+			}
+			@media(max-width: @sm-device) {
+				position:static;
+				display:inline;
+				margin:5% 0 0 0
+			}
+		}
+		p{
+			background:url(../images/wdr-03.jpg) 0 0 no-repeat;
+			padding:0 0 0 60px;
+		}
+	}
+	#article-3{
+		padding:10% 0 0 0;
+		background:#EAE3D8;
+		@media(max-width: @md-device) {
+			padding:10% 0;
+		}
+		@media(max-width: @sm-device) {
+			padding:15% 0;
+		}
+		h4{
+			font:300 3em @font-family;
+			letter-spacing: .1em;
+			color:#59493F;
+			border-bottom:1px solid #59493F;
+			display:inline;
+			padding:0 80px 5px 80px;
+			@media(max-width: @sm-device) {
+				display:block;
+				padding:0 0 5px 0;
+			}
+		}
+		h5{
+			font:900 2.5em verdana;
+			color:#d1c0a5;
+		}
+		img{display:inline;}
+	}
+	#article-4{
+		background-image:url(../images/exp-05.jpg);
+		.background;
+	}
+}
+

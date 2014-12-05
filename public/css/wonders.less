@@ -1,0 +1,117 @@
+/*-----------------------------------------------------------------------參數---*/
+
+@import "global";
+
+/*-----------------------------------------------------------------------頁首---*/
+
+#banner{
+	background-image:url(../images/wdr-01.jpg);
+	background-size:cover;
+	.background;
+	height:200px;
+	@media(max-width: @sm-device) {
+		height:100px;
+	}
+}
+
+/*-----------------------------------------------------------------------頁身---*/
+
+article{
+	section{
+		padding:10% 0;
+		@media(max-width: @sm-device) {
+			padding:15% 0;
+		}
+	}
+	h3{
+		font:900 1.3em @font-family;
+		color:#fee343;
+		letter-spacing: .2em;
+		line-height: 1.7em;
+		border-bottom:2px solid #fee343;
+		display:inline;
+		padding:0 0 5px 0;
+	}
+	p{
+		line-height:2.5em;
+	}
+	#article-1{
+		background:url(../images/lib-02.jpg);
+		color:#f3e9de;
+		h4{
+			font:300 4.5em @font-family;
+			letter-spacing: .1em;
+		}
+		p{
+			margin:5% 15% 0 15%;
+			@media(max-width: @sm-device) {
+				margin:5% 0 0 0;
+			}
+		}
+		img{
+			display:inline;
+			margin:0 0 5% 0 
+		}
+	}
+	#article-2{
+		background-image:url(../images/wdr-12.jpg);
+		.background;
+		color:#eae3d8;
+		@media(max-width: @sm-device) {
+			background:#D1C0A6;
+			color:#3C3431;
+		}
+		img{
+			position:absolute;
+			right:0;
+			top:-250px;
+			@media(max-width: 1280px) {
+				top:-200px;
+				max-width:80%;
+			}
+			@media(max-width: @md-device) {
+				top:-150px;
+				max-width:90%;
+			}
+			@media(max-width: @sm-device) {
+				position:static;
+				display:inline;
+				margin:5% 0 0 0
+			}
+		}
+		p{
+			background:url(../images/wdr-03.jpg) 0 0 no-repeat;
+			padding:0 0 0 60px;
+		}
+	}
+	#article-3{
+		background:url(../images/wdr-10.gif) 110% center no-repeat #EAE3D8;
+		@media(max-width: @md-device) {
+			background:#EAE3D8;
+		}
+		p{
+			padding:95px 0 0 0;
+			@media(max-width: @sm-device) {
+				padding:15px 0 0 0;
+			}
+		}
+		.row{
+			margin:0 0 5% 0;
+			@media(max-width: @sm-device) {
+				margin:0 0 10% 0;
+			}
+		}
+		img{
+			display:inline;
+			@media(max-width: @sm-device) {
+				padding:15px 0 0 0;
+				max-width:80%;
+			}
+		}
+	}
+	#article-4{
+		background-image:url(../images/wdr-13.jpg);
+		.background;
+	}
+}
+

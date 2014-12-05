@@ -1,0 +1,313 @@
+/*-----------------------------------------------------------------------參數---*/
+
+@import "normalize.css";
+@import "bootstrap.min.css";
+
+@font-family: 微軟正黑體,Microsoft JhengHei,Arial;
+@xs-device: 480px;
+@sm-device: 767px;
+@md-device: 1023px;
+
+.animate{
+	-webkit-transition:all ease .3s;
+	-moz-transition:all ease .3s
+}
+.background{
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-color:transparent;
+}
+.opacity{
+	opacity:.75;
+	filter:alpha(opacity=75);
+}
+.reset{
+	padding:0;
+	margin:0;
+	border:0;
+}
+
+/*-----------------------------------------------------------------------全域---*/
+
+body{
+	font:300 1.7em @font-family;
+	line-height:1.7em;
+	@media(max-width: @sm-device) {
+		font-size:1.5em;
+	}
+	@media(max-width: @xs-device) {
+		font-size:1.4em;
+	}
+}
+
+a{
+	font:300 1em @font-family;
+	outline: none;
+	&:hover{
+		text-decoration:none;
+		outline: none;
+	}	
+	&:active,&:focus{
+		outline: none;
+	}
+}
+
+.container{
+	width:100%;
+	max-width:1225px;
+	margin:0 auto;
+	position:relative;
+}
+
+/*-----------------------------------------------------------------------頁首---*/
+
+header{
+	border-top:5px solid #FEE343;
+	background:url(../images/hdr-bg.gif);
+	@media(max-width: @sm-device) {
+		border:none;
+		background:#FFE344;
+	}
+	.container{
+		@media(max-width: @sm-device) {
+			padding:0px;
+		}
+	}
+	h1{
+		position:absolute;
+		top:-20px;
+		left:0;
+		width:225px;
+		height:388px;
+		@media(max-width: @sm-device) {
+			top:-20px;
+			width:85px;
+			height:63px;				
+		}
+		a{
+			display:block;
+			width:100%;
+			height:100%;
+			text-indent:-7777px;
+			background:url(../images/logo.png);
+			@media(max-width: @sm-device) {
+				background:url(../images/logo-m.png);				
+			}
+			&:hover{
+				background:url(../images/logo-h.png);
+				@media(max-width: @sm-device) {
+					background:url(../images/logo-m.png);
+				}
+			}	
+		}
+	}		
+}
+
+/*-----------------------------------------------------------------------選單---*/
+
+nav.navbar{
+	float:right;
+	height:64px;
+	margin:-1px 0 0 0;
+	z-index:9;
+	@media(max-width: @sm-device) {
+		float:none;
+	}
+	/*第一層選單*/
+	.navbar-nav{
+		margin-top:0;
+		& > li{
+			& > a{
+				width:187px;
+				height:63px;
+				padding:22px 0 0 0;
+				text-align:center;
+				color:#d1c0a5;
+				background-position:center -5px;
+				background-repeat:no-repeat;
+				.animate;
+				@media(max-width:1200px) {
+					width:147px;
+				}
+				@media(max-width: @md-device) {
+					width:107px;
+				}
+				@media(max-width: @sm-device) {
+					width:100%;
+					color:#F0E3D2;
+					text-align:left;
+					height:auto;
+					padding:15px 15px 15px 35px;					
+					font-size:1.1em;
+					border-top:1px solid #9A6B35;
+					background:url(../images/hdr-nav.gif) 15px center no-repeat #74593C;
+				}				
+				&:hover,&:focus{
+					background-image:url(../images/hdr-active.png) ;	
+					background-color:transparent;		
+					background-position:center -5px;
+					background-repeat:no-repeat;	
+					color:#362e2b;
+					border-top:1px solid #9A6B35;
+					@media(max-width: @md-device) {
+						background:#FEE343;					
+					}
+					@media(max-width: @sm-device) {
+						background:url(../images/hdr-nav-h.gif) 15px center no-repeat #D1C0A6;										
+					}
+				}				
+			}
+		} 
+	} 
+	/*第二層選單*/
+	.dropdown-menu{
+		background:#3e3027;
+		background:rgba(62,48,39,.9);
+		padding:0;
+		li{
+			a{
+				color:#f3e9de;
+				padding:15px;
+				margin:0 10px;
+				border-top:1px solid #AD9243;
+				@media(max-width: @sm-device) {
+					margin:0px;
+					border-top:1px solid #9A6B35;
+					padding:15px 20px 15px 35px!important;
+					background:#5A493F;		
+				}
+				&:hover,&:focus{					
+					color:#3e3027;
+					background:#D1C0A6;
+				}					
+			}			
+		}
+		li:first-child a{
+			border:none;
+		}	
+	} 
+	/*按鈕*/
+	.navbar-header{
+		button{
+			background:#372D2B;
+			width:55px;
+			height:70px;
+			border-radius:0;
+			padding:0 0 0 10px;
+			position:relative;left:1px;
+		}
+	}	
+	.navbar-toggle{
+		.reset;
+	}
+}
+
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus{
+	background:none;
+}
+
+/*-----------------------------------------------------------------------頁尾---*/
+
+footer{
+	background:url(../images/lib-02.jpg);
+	border-bottom:7px solid #755B3C;
+	color:#eae3d8;
+	.container{
+		padding:3% 0 0 0;
+		background:url(../images/fot-02.png) 0 0 no-repeat;
+		@media(max-width: @sm-device) {
+			padding:120px 0 0 0;
+		}
+	}
+	a {color:#eae3d8}
+	#link{
+		@media(max-width: @sm-device) {
+			padding:0;
+			overflow:hidden;
+		}
+		div{
+			@media(max-width: @sm-device) {
+				float:right;
+				width:70%;
+			}
+		}
+	}
+	#link-1{
+		margin:0 0 20px 0;
+		a{
+			display:block;
+			width:100%;
+			padding:10px;
+			text-align:center;
+			letter-spacing: .25em;
+			font:300 1.6em @font-family;
+			color:#000;
+			.animate;
+			background:url(../images/fot-01.png) 93% center no-repeat #FFE344;
+			@media(max-width: @md-device) {
+				background:#FFE344;;
+			}
+			@media(max-width: @xs-device) {
+				background:url(../images/fot-01.png) 93% center no-repeat #FFE344;
+			}
+			&:hover{
+				background:url(../images/fot-01.png) 95% center no-repeat #BBA72E;
+				@media(max-width: @md-device) {
+					background:#BBA72E;
+				}
+				@media(max-width: @xs-device) {
+					background:url(../images/fot-01.png) 95% center no-repeat #BBA72E;
+				}
+			}
+		}
+	}
+	#link-2{
+		background:#AC9D88;
+		overflow:hidden;
+		padding:5px 10px;
+		a{
+			color:#000;
+			font-size:.7em;
+			float:left;
+			text-align:center;
+			display:block;
+			width:50%;
+			&:hover{
+				color:#EAE3D8;
+			}
+		}
+		img{display:inline;}
+	}
+	#info{
+		background:url(../images/fot-05.png) center bottom no-repeat;
+		font-size:.8em;
+		@media(max-width: @sm-device) {
+			margin:10% 0 0 0;
+		}
+		img{
+			position:relative;
+			top:-8px;
+			margin:0 10px 0 0;
+		}
+		a:hover{
+			color:#eae3d8;
+			text-decoration:underline;
+		}
+	}
+	#gotop{
+		position:absolute;
+		bottom:0;
+		right:0;
+		width:55px;
+		height:118px;
+		.animate;
+		@media(max-width: @sm-device) {
+			left:15px;
+		}
+		&:hover{
+			bottom:5px;
+		}
+	}
+}
