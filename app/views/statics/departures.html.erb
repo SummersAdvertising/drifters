@@ -1,9 +1,0 @@
-<% Tour.order(:ranking).each_with_index do | tour, index | %>
-  <% if index <= 1 %>
-    <%= tour.name %> | <%= tour.en_name %><br>
-    <% Departure.where(tour_id: tour.id).order(:ranking).each do | departure | %>
-      <%= departure.url %><br>
-    <% end %>
-    <hr>
-  <% end %>
-<% end %>

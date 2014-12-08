@@ -1,9 +1,9 @@
 #encoding: utf-8
 class StaticsController < ApplicationController
   layout false , only: [:index]
-
+  
   def index
-    #@announcements = Announcement.includes(:galleries).for_index.limit(3)
+    
   end
 
   def about
