@@ -1,4 +1,12 @@
 <h1>SouthAfrica18day</h1>
-<% Departure.where(tour_id: Tour.where(en_name: 'South_Africa_18_day') ).order(:ranking).each do |departure | %>
-  <%= departure.url %><br>
+
+<% Departure.where(tour_id: Tour.where(en_name: 'South_Africa_18_day') ).order(:ranking).each do | schedule | %>
+    <% JSON.parse(open("#{schedule.url}").read).each do |event| %>
+   		
+			<div><%= event["date"] %><span> <%= event["pax"] %></span></div>
+
+    <% end %>
+  
 <% end %>
+
+
