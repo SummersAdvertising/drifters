@@ -1,12 +1,19 @@
 <h1>SouthAfrica18day</h1>
 
 <% Departure.where(tour_id: Tour.where(en_name: 'South_Africa_18_day') ).order(:ranking).each do | schedule | %>
-    <% JSON.parse(open("#{schedule.url}").read).each do |event| %>
-   		
-			<div><%= event["date"] %><span> <%= event["pax"] %></span></div>
-
-    <% end %>
-  
+    <% if(schedule.url.index("http://")) %>
+	    <% if(schedule.url.index("%")) %>
+	    	<% @url="#{schedule.url}" %>
+	    <% else %>
+	    	<% @url=URI.encode("#{schedule.url}") %>
+	    <% end %>
+    	
+    	<% if(open(@url).read.index("pax") and open(@url).read.index("date")) %>
+	    	<% JSON.parse(open(@url).read).each do |event| %>
+					<div><%= event["date"] %><span> <%= event["pax"] %></span></div>
+				<% end %>
+		  <% end %>
+		<% end %>
 <% end %>
 
 
