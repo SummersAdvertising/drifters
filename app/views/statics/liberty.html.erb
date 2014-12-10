@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<title>大旅行家│Drifters</title>
+<!-- Bootstrap -->
+<link href="/css/liberty.less" rel="stylesheet/less" />
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:/ -->
+<!--[if lt IE 9]>
+      <script src="https:/oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https:/oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<%= render 'layouts/front_shared_header' %>
+
+<article>
+  <section id="article-1">
+    <div class="container text-center">
+    <h3>大旅行家越野系列特色</h3>
+    <h4>自己做主</h4>
+    <p><img src="/images/lib-05.png" class="img-responsive"><br>
+    大旅行家越野系列幾乎天天出團，你可以自行決定最完美的出發時間，它沒有兩人成行的限制，你只要一有空檔就可以報名參團，一旦確認了訂位就保證出團。</p> 
+    </div>
+  </section>
+  <section id="article-2">
+    <div class="container row"> 
+    <div class="col-sm-5">
+    <p>大旅行家越野系列針對心態年輕、富有冒險精神的顧客，行程分為經典，探險，冒險三類，天數在 5~24 天，每團人數約 6~17 人，年齡約在 18~55 歲之間，團員來自世界各地，但只要體力許可，心態年輕，即使超過 55 歲也可參加。</p>    
+    </div>
+    <div class="col-sm-6 col-sm-offset-1 text-center">
+    <img src="/images/lib-03.png" class="img-responsive">
+    </div>
+    </div>
+  </section>
+  <section id="article-3">
+    <div class="container row">
+      <div class="col-md-5 text-center"><h4>冒險精神</h4><h5>Adventure</h5></div> 
+      <div class="col-md-7"><p>大旅行家越野系列自1983年發展至今，已有超過30年歷史，由於精心計劃、並以永續經營和回饋保留區和當地居民為宗旨，累積至今，已擁有大量基礎設施，包括野生動物保留區、野外營區、林中小屋、船隻、獨木舟、冒險設備和其它的資源等，讓團員可以在免除多餘開支（如門票和許可証）的前提下，盡情享受非洲最多彩多姿的一面。</p>
+      <blockquote>
+        大旅行家越野系列的團費與市面上一般行程相較下更平易近人，且提供了其它行程曾未嘗試的新玩法和更接近大自然的旅遊體驗。
+      </blockquote>
+      <p>大旅行家越野系列行程大多包辦早午晚三餐，偶爾少數幾餐可自行淺嘗當地美食。晚間則視所到地點靈活安排住宿，包括林中小屋、小旅館、帳篷、小木屋等。所有的行程都會探索非洲原生種的動植物，因此往往會駛進有趣但鮮為人知，也沒有多少基礎設施的私房景點，在這樣的地方就會住帳篷。如果是在基礎建設完善的地方，就會安排小木屋或小旅館。</p>
+      </div>
+      <div class="col-md-12 text-center hidden-xs"><img src="/images/lib-04.png" class="img-responsive"></div> 
+    </div>
+  </section>
+  <section id="article-4" class="hidden-xs">
+    <div class="container"> 
+    </div>
+  </section>
+</article>
+
+<%= render 'layouts/front_shared_footer' %>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <script src="/js/bootstrap.min.js"></script> 
+  <script src="/js/less.min.js"></script> 
+  <script src="/js/SmoothScroll.js"></script> 
+  <script src="/js/jquery.parallax-1.1.3.js"></script> 
+  <script src="/js/anchor-art.js"></script> 
+
+  <script>
+    $(document).ready(function(){
+      $('#article-2').parallax({offsetY:-200,speedFactor:.3}); 
+      $('#article-4').parallax({offsetY:-200,speedFactor:.3}); 
+    }); 
+  </script>
+  
+  </body>
+</html>

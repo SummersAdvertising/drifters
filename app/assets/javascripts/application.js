@@ -16,5 +16,4 @@
 //= require jquery-ui/sortable
 //= require jquery-ui/accordion
 //= require alertify
-//= require turbolinks
 //= require_tree .
