@@ -103,6 +103,7 @@ article{
 							border:none;
 							background:none;
 							width:100%;
+							padding:5px;
 							&:hover,&:focus{
 								background:#fff;
 								opacity:.5;
@@ -111,17 +112,17 @@ article{
 						}
 						textarea{
 							width:100%;
-							min-height:150px;
+							min-height:125px;
+							padding:5px;
 							border:1px solid #59493F;
 							background:none;
-							padding:10px;
 							&:hover,&:focus{
 								background:#fff;
 								opacity:.5;
 								filter:alpha(opacity=50);
 							};
 						}
-						button{
+						input.btn{
 							background:#FEE343;
 							font-size:1.5em;
 							padding:2.5% 10%;
@@ -156,6 +157,9 @@ article{
 				&:hover{
 					background:#68CFCA;
 				};
+				&:active,&:focus{
+					outline: none;
+				}
 			}
 			p{
 				color:#e6e0d8;
@@ -180,3 +184,24 @@ article{
 	}
 }
 
+
+#recaptcha_table{border:0!important;}
+#recaptcha_image { width:auto !important; max-width: 100%; height: auto !important}
+#recaptcha_image img { width:100% ;}
+#recaptcha_response_field { width: 100% !important; max-width: 302px; 
+	padding:10px;
+	border:1px solid #ccc!important;
+}
+
+#recaptcha_area {background:#fff!important;
+border-radius:5px;padding:15px 0;}
+#recaptcha_area tr{
+height: auto !important;
+}
+.recaptcha_image_cell{
+	width: 100% !important;
+	max-width: 300px;
+	img{
+		height: auto !important;
+	}
+}
