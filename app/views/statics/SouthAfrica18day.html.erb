@@ -175,6 +175,7 @@
       </div>
       <div class="row">
         <% Departure.where(tour_id: Tour.where(en_name: 'South_Africa_18_day') ).order(:ranking).each do | schedule | %>
+          
           <% if(schedule.url.index("http:/")) %>
             <% if(schedule.url.index("%")) %>
               <% @url="#{schedule.url}" %>
@@ -190,6 +191,7 @@
               <% end %>
             <% end %>
           <% end %>
+
         <% end %>
       </div>
       <a href='<%= "#{contacts_url}" %>'>看更多>></a>
