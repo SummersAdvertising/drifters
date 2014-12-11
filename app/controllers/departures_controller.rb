@@ -5,7 +5,7 @@ class DeparturesController < ApplicationController
     begin
       if params[:looking_for].in? Tour.order(:ranking).pluck(:en_name)
         @en_name = params[:looking_for].to_s
-        @limit = 200
+        @limit = 12
       end
 
       respond_to do |format|
