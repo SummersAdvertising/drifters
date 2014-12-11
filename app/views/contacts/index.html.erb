@@ -22,7 +22,7 @@
                     <%= f.radio_button :gender, gender[0] , :class => 'radio' %> 
                     <label class="checkbox-inline">
                       <%= gender[1] %>
-                    </label>&nbsp;&nbsp;&nbsp;&nbsp;
+                    </label>
                   <% end %>
                 </td>
               </tr>
@@ -34,9 +34,9 @@
                 <td>Email <span><span>*</span></span></td>
                 <td><%= f.text_field :email, class: 'text' %></td>
               </tr>
-              <tr>
-                <td>通訊地址</td>
-                <td><%= f.text_area :address, class: 'text' %></td>
+              <tr class="no-border">
+                <td valign="top">通訊地址</td>
+                <td><%= f.text_area :address %></td>
               </tr>
               <tr class="no-border">
                 <td colspan="2"> 欲參加的行程 <span>* 可複選</span><br>
@@ -55,10 +55,11 @@
                 <td><%= f.text_field :departure_date, class: 'text' %></td>
               </tr>
               <tr class="no-border">
-                <td colspan="2"><%= f.text_area :content %></td>
+                <td valign="top">留言</td>
+                <td><%= f.text_area :content %></td>
               </tr>
-              <tr>
-                <td colspan="2">
+              <tr class="no-border">
+                <td colspan="2" align="center">
                   <%= recaptcha_tags :display => { :theme => "clean" } %>
                 </td>
               </tr>
