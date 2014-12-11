@@ -173,26 +173,9 @@
         <h4 class="pull-left">當地出發日期與空位</h4>
         <p class="pull-left">（所有日期都是根據當地出發地，並非從台灣出發）</p>
       </div>
-      <div class="row">
-        <% Departure.where(tour_id: Tour.where(en_name: 'South_Africa_18_day') ).order(:ranking).each do | schedule | %>
-          
-          <% if(schedule.url.index("http:/")) %>
-            <% if(schedule.url.index("%")) %>
-              <% @url="#{schedule.url}" %>
-            <% else %>
-              <% @url=URI.encode("#{schedule.url}") %>
-            <% end %>
-            
-            <% if(open(@url).read.index("pax") and open(@url).read.index("date")) %>
-              <% JSON.parse(open(@url).read).each do |event| %>
-                <div class="col-md-3 col-sm-6"><div class="tag">
-                  <%= event["date"] %><span> <%= event["pax"] %></span>
-                </div></div>
-              <% end %>
-            <% end %>
-          <% end %>
-
-        <% end %>
+      <div class="row" id='departure_preview'>
+        <p style='text-align:center;'>Loading... this might take a while!</p>
+        <div id='looking_for' style='display:none;'>South_Africa_18_day</div>
       </div>
       <a href='<%= "#{contacts_url}" %>'>看更多>></a>
     </div>
@@ -208,7 +191,6 @@
   <script src="/js/jquery.parallax-1.1.3.js"></script> 
   <script src="/js/anchor-art.js"></script> 
   <script src="/js/jquery.bxslider.min.js"></script> 
-  
   <script>
     $(document).ready(function(){
       $("#accordion").accordion({

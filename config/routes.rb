@@ -9,7 +9,17 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :contacts, only: [:index, :create]
+  resources :contacts, only: [:index, :create] do
+    collection do
+      get :fetch_tours_detail
+    end
+  end
+  
+  resources :departures do
+    collection do
+      get :fetch_departures_detail
+    end
+  end
 
   namespace :admin do
 

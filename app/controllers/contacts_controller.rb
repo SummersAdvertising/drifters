@@ -40,7 +40,21 @@ class ContactsController < ApplicationController
     end
 
   end
+  
+  def fetch_tours_detail
+    begin
+      
+      @tours = Tour.order(:ranking).limit(2) #第一階段適用
+          
+      respond_to do |format|
+        format.js
+      end
 
+    rescue
+      redirect_to root_path
+    end
+
+  end
   private
 
   # Never trust parameters from the scary internet, only allow the white list through.

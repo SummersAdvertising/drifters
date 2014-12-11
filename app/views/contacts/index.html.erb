@@ -71,48 +71,23 @@
           <% end %>
       </section>
       <section id="date">
-        <div id="accordion">
-          <% Tour.order(:ranking).each_with_index do | tour, index | %>
-            <% if index <= 1 %>
-              <h3><%= tour.name %></h3>
-              <div>
-                <p>所有日期都是根據當地出發地，並非從台灣出發<br>白色欄位內則為當次剩餘座位數量</p>
-                <div class="row">
-                <% Departure.where(tour_id: Tour.where(en_name: tour.en_name) ).order(:ranking).each do | schedule | %>
-                  <% if(schedule.url.index("http:/")) %>
-                    <% if(schedule.url.index("%")) %>
-                      <% @url="#{schedule.url}" %>
-                    <% else %>
-                      <% @url=URI.encode("#{schedule.url}") %>
-                    <% end %>
-                    
-                    <% if(open(@url).read.index("pax") and open(@url).read.index("date")) %>
-                      <% JSON.parse(open(@url).read).each do |event| %>
-                        <div class="col-md-3 col-sm-6"><div class="tag">
-                          <%= event["date"] %><span> <%= event["pax"] %></span>
-                        </div></div>
-                      <% end %>
-                    <% end %>
-                  <% end %>
-                <% end %>
-                </div>
-              </div> 
-            <% end %>
-          <% end %>
-
+        <div id="accordion" class='contact_looking_for_all'>
+          <p style='text-align:center;'>Loading... this might take a while!</p>
+          <div id='contact_looking_for_all' style='display:none;'>ALL</div>
         </div><!--accordion-->
       </section>
       </div>
     </div>
   </div>
 </article>
+
 <script>
   $(document).ready(function(){
     $('#article-2').parallax({offsetY:-300,speedFactor:.3}); 
     $('#article-4').parallax({offsetY:-800,speedFactor:.3}); 
-    $("#accordion").accordion({
-      heightStyle: "content"
-    });
+    // $("#accordion").accordion({
+    //   heightStyle: "content"
+    // });
 
     $(function(){ 
       var _showTab = 0;
