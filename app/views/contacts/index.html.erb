@@ -88,10 +88,12 @@
                     <% end %>
                     
                     <% if(open(@url).read.index("pax") and open(@url).read.index("date")) %>
-                      <% JSON.parse(open(@url).read).each do |event| %>
+                      <% JSON.parse(open(@url).read).each_with_index do |event, index| %>
+                      <% if index<=12 %>
                         <div class="col-md-3 col-sm-6"><div class="tag">
                           <%= event["date"] %><span> <%= event["pax"] %></span>
                         </div></div>
+                      <% end %>
                       <% end %>
                     <% end %>
                   <% end %>
