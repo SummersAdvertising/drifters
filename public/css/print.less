@@ -1,0 +1,173 @@
+
+/*-----------------------------------------------------------------------參數---*/
+
+@import "global";
+
+/*-----------------------------------------------------------------------頁首---*/
+
+header{display:none}
+
+/*-----------------------------------------------------------------------頁身---*/
+
+article{
+	section{
+		@media(max-width: @sm-device) {
+			padding:0;
+		}
+	}
+	h3{
+		font:900 1em @font-family;
+		letter-spacing: .2em;
+		line-height: 1em;
+		border:0;
+		display:block;
+		padding:0;
+	}
+	p{line-height:1.9em}
+	img{display:inline!important}
+	#article-1{
+		h4{
+			font:300 1.7em @font-family;
+			letter-spacing: .17em;
+			border:1px solid #000;
+			display:inline-block;
+			padding:10px 15px;
+		}		
+		#intro{display:none}
+	}
+	#article-2{	
+		#accordion{
+			padding-left:0;
+			border-left:1px dashed #8C4403;
+			@media(max-width: @sm-device) {
+				padding:0;
+				border:none;
+			}
+			h5{
+				border-bottom:1px solid #C7B299;
+				background:url(../images/itn-05.png) 0 bottom no-repeat;
+				min-height:38px;
+				padding:5px 70px 0 45px;
+				margin:65px 0 20px 0;
+				font-size:1.3em;
+				line-height:1.7em;
+				color:#534741;	
+				position:relative;
+				cursor:pointer;
+				@media(max-width: @sm-device) {
+					padding:0
+				}
+				&:active,&:focus{
+					outline: none;
+				}
+				&:hover{color:#4ABCAB;}
+				.day{
+					font:300 1em "impact";
+					display:inline;
+					width:auto;
+					height:auto;
+					position:static;
+					top:0;
+					left:0;
+					text-align:center;
+					padding:0;
+					@media(max-width: @sm-device) {
+						left:0;
+						top:0;
+						background:none;
+						padding:0;
+						width:auto;
+						height:auto;
+						text-align: left;
+						margin:0 10px 0 0;
+					}					
+				}
+				.days{
+					font-size:1em;
+					padding:26px 0 0 0;
+					@media(max-width: @sm-device) {
+						font-size:1em;
+						padding:0;
+					}
+				}
+				.ui-icon{display:none;}
+			}
+			img{display:none!important;}							
+		}
+		.col-sm-offset-1{
+			@media(max-width: @sm-device) {.reset}
+		}
+		.ui-accordion-content{display:block!important;}
+		aside{
+			h5{				
+				text-align:left;
+				font-weight:900;
+				@media(max-width: @sm-device) {
+					border-bottom:2px solid #543D30;
+					padding:10px 5px;
+					margin:25px 0 0 0;
+				}			
+			}
+			ul{		
+				li{
+					padding:5px 10px;
+				}
+			}			
+			#aside-1{
+				background:url(../images/itn-06.png) 0 0 no-repeat;
+				background-size:contain;
+				@media(max-width: @sm-device) {
+					background:url(../images/itn-06-m.gif) 0 0 no-repeat;					
+				}
+			}
+			#aside-2{
+				background:url(../images/itn-07.png) 0 0 no-repeat;
+				background-size:contain;
+				@media(max-width: @sm-device) {
+					background:url(../images/itn-07-m.gif) 0 0 no-repeat;					
+				}
+			}
+			span{color:#a6937c;font-size:.8em;}
+		}
+		#note{
+			background:#FFF568;
+			padding:0 5% 2.5% 5%;
+			margin:5% 0 0 0;
+			h4{
+				color:#EAE3D8;
+				font:900 3em ArialBlack;
+				line-height:.8em;
+				margin:0 0 20px 0;
+			}
+			ul{.reset}
+			li{list-style: none;
+				font-size:.9em;}
+		}
+	}
+	#article-3{
+		display:none;
+	}
+	#article-4{
+		display:none;
+	}
+}
+
+/*-----------------------------------------------------------------------頁尾---*/
+
+footer{
+	.container{
+		@media(max-width: @sm-device) {
+			margin:35px 0 0 0;
+			padding:10px;
+		}
+	}
+	#link{display:none;}
+	#info{
+		font-size:.85em;
+		@media(max-width: @sm-device) {
+			margin:0;
+		}
+		img{display:none}
+	}
+	#gotop{display:none;}
+}
