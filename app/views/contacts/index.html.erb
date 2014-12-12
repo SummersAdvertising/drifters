@@ -34,7 +34,7 @@
                 <td>Email <span><span>*</span></span></td>
                 <td><%= f.text_field :email, class: 'text' %></td>
               </tr>
-              <tr class="no-border">
+              <tr>
                 <td valign="top">通訊地址</td>
                 <td><%= f.text_field :address , class: 'text' %></td>
               </tr>
@@ -72,9 +72,16 @@
           <% end %>
       </section>
       <section id="date">
+        <div id='contact_looking_for_all' style='display:none;'>ALL</div>
         <div id="accordion" class='contact_looking_for_all'>
-          <p style='text-align:center;'>Loading... this might take a while!</p>
-          <div id='contact_looking_for_all' style='display:none;'>ALL</div>
+          <% @tours.each do |tour| %>
+            <h3><%= tour.name %></h3>
+            <div><p>所有日期都是根據當地出發地，並非從台灣出發<br>白色欄位內則為當次剩餘座位數量</p>
+              <div class='row' id="<%= "departures_of_#{tour.en_name}" %>">
+                <p id="<%= "loading_p_#{tour.en_name}" %>" style='text-align:center;'>Loading... this might take a while!</p>
+              </div>
+            </div>
+          <% end %>
         </div><!--accordion-->
       </section>
       </div>
@@ -86,9 +93,9 @@
   $(document).ready(function(){
     $('#article-2').parallax({offsetY:-300,speedFactor:.3}); 
     $('#article-4').parallax({offsetY:-800,speedFactor:.3}); 
-    // $("#accordion").accordion({
-    //   heightStyle: "content"
-    // });
+    $("#accordion").accordion({
+      heightStyle: "content"
+    });
 
     $(function(){ 
       var _showTab = 0;
