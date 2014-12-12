@@ -47,6 +47,6 @@ Rails.application.routes.draw do
 
   end
 
-  # get '(*url)'   => 'errors#index'
+  get '(*url)'   => 'errors#index'
   
 end
