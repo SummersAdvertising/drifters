@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
   #new business contact
   def index
     @contact = Contact.new()
-    @tours = Tour.order(:ranking)#.limit(2) #第一階段適用
+    @tours = Tour.order(:ranking).limit(2) #第一階段適用
     @genders = [['男','男'],['女','女']]
   end
 
@@ -42,6 +42,19 @@ class ContactsController < ApplicationController
   end
   
   def fetch_tours_detail
+    begin
+
+      if params[:looking_for].in? Tour.order(:ranking).pluck(:en_name)
+        @tour = Tour.where(en_name: params[:looking_for].to_s).first
+      end
+
+      respond_to do |format|
+        format.js
+      end
+
+    rescue
+      # redirect_to root_path
+    end
     # fetch all at once
     # begin
       
@@ -54,25 +67,6 @@ class ContactsController < ApplicationController
     # rescue
     #   redirect_to root_path
     # end
-    begin
-      # p params[:looking_for]
-      # p params[:looking_for].in? Tour.order(:ranking).pluck(:en_name)
-
-      if params[:looking_for].in? Tour.order(:ranking).pluck(:en_name)
-        @tour = Tour.where(en_name: params[:looking_for].to_s).first
-      #   p @tour
-      # else
-      #   @tour = Tour.first
-      end
-
-      respond_to do |format|
-        format.js
-      end
-
-    rescue
-      # redirect_to root_path
-    end
-
   end
   private
 
