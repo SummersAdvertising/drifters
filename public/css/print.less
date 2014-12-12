@@ -33,7 +33,30 @@ article{
 			display:inline-block;
 			padding:10px 15px;
 		}		
-		#intro{display:none}
+		#intro{
+			.reset;
+			@media(max-width: @sm-device) {
+				.reset;
+				margin:0 0 20px 0;
+			}
+			img{display:none!important;}
+			.col-xs-4{
+				margin:0 20px 0 0;
+				padding:0 0 0 25px;
+				width:auto;
+				position:relative;
+			}
+			.col-xs-4:before{
+				content:'●';
+				display:block;
+				color:#aaa;
+				width:14px;
+				height:14px;
+				position:absolute;
+				top:27px;
+				left:0;
+			}
+		}
 	}
 	#article-2{	
 		#accordion{
