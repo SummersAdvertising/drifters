@@ -6,13 +6,13 @@ class Contact < ActiveRecord::Base
   require 'sanitize'
   before_validation :sanitize_content, :on => :create
   
-  validates_presence_of :name, :message => "姓名不能為空白", :on => :create
-  validates_presence_of :subject, :message => "主旨不能為空白", :on => :create
-  validates_presence_of :content, :message => "留言不能為空白", :on => :create
+  validates_presence_of :name, :message => "請填寫姓名", :on => :create
+  validates_presence_of :subject, :message => "請選擇行程", :on => :create
+  # validates_presence_of :content, :message => "請填寫留言", :on => :create
   
   validates :email, :format => { :with => /\A([\w\.%\+\-]+)@([\w\-]+\.)+([\w]{2,})\z/i, :message => 'E-Mail 格式不符'  }, :on => :create
-  #validates_presence_of :phone, :message => "請輸入電話或行動電話"
-  #validates :phone, :format => { :with =>/[- #)(0-9]{4,10}[- #)(0-9]{4,10}/, :message => '聯絡電話 格式不符' }
+  validates_presence_of :phone, :message => "請輸入電話或行動電話"
+  validates :phone, :format => { :with =>/[- #)(0-9]{4,10}[- #)(0-9]{4,10}/, :message => '聯絡電話 格式不符' }
 
   #validates :phone, :format => { :with => /\(?([0-9]{3})\)?([ #-]?)([0-9]{3,4})\2([0-9]{4})/, :message => '聯絡電話 格式不符' }
   scope :new_asks, -> { where(status: 'new').order(created_at: :asc)}

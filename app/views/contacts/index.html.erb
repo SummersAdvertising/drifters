@@ -13,13 +13,17 @@
             <table width="100%" border="0" cellspacing="0" cellpadding="0">
               <tr>
                 <td width="15%">姓名 <span>*</span></td>
-                <td width="85%"><%= f.text_field :name, class: 'text' %></td>
+                <td width="85%"><%= f.text_field :name, class: 'text required', required: true %></td>
               </tr>
               <tr class="no-border">
                 <td>性別</td>
                 <td>
-                  <% @genders.each do | gender | %>
-                    <%= f.radio_button :gender, gender[0] %> 
+                  <% @genders.each_with_index do | gender, index | %>
+                    <% if index == 0 %>
+                      <%= f.radio_button :gender, gender[0], checked: true %> 
+                    <% else %>
+                      <%= f.radio_button :gender, gender[0] %> 
+                    <% end %>
                     <label class="checkbox-inline">
                       <%= gender[1] %>
                     </label>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -28,11 +32,11 @@
               </tr>
               <tr>
                 <td>連絡電話 <span>*</span></td>
-                <td><%= f.text_field :phone, class: 'text' %></td>
+                <td><%= f.text_field :phone, class: 'text required digits', required: true %></td>
               </tr>
               <tr>
                 <td>Email <span><span>*</span></span></td>
-                <td><%= f.text_field :email, class: 'text' %></td>
+                <td><%= f.text_field :email, class: 'text required email', required: true %></td>
               </tr>
               <tr>
                 <td valign="top">通訊地址</td>
@@ -88,7 +92,9 @@
     </div>
   </div>
 </article>
-
+<script src="/js_plugins/jq_validation/jquery.validate.min.js"></script> 
+<script src="/js_plugins/jq_validation/messages_zh_TW.js"></script> 
+<script>$('#newthiscontact').validate();</script>
 <script>
   $(document).ready(function(){
     $('#article-2').parallax({offsetY:-300,speedFactor:.3}); 
