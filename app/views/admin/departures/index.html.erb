@@ -1,15 +1,12 @@
 <header>
-  <h2 class="left">Departures/ <span> drag-and-drop to reorder </span></h2>
+  <h2 class="left">出團資訊 <span>(可拖拉排序)</span></h2>
 </header>
 
-<article>
+<article> 
   <div class="hgroup">
-    <h3 class="left">
-      
-    </h3>
     <div class="button right">
       <%= link_to new_admin_tour_departure_path, class: 'right highlight toggle_new_category' do %>
-        New<img src="/images/admin/add_folder.png">
+        建立行程<img src="/images/admin/add_folder.png">
       <% end %>
     </div>
   </div>
@@ -20,11 +17,12 @@
       <% @departures.each do |departure| %>
       
         <tr <%= "id=Departurecontainer_#{departure.id.to_s}" %> class='dragable' >
-          <td width="88%">
-            name:<%= departure.name %><br>
-            區間：<%= get_departure_type(departure) %><br>
-            tour:<%= departure.tour.name %><br>
-            <%= departure.url %><br>
+          <td width="18%">
+            <%= departure.name %>
+          </td>
+          <td width="70%">
+            <%= departure.tour.name %>
+          </td>
           </td>
           <td width="12%">
             <div class="tool">
@@ -33,15 +31,12 @@
             </div>
           </td>
         </tr>
-        
       <% end %>
-
-    </table>
-    <div class="button"> 
-      <%= link_to image_tag("/images/admin/left.png")+"返回", admin_tours_path(), class: "left" %>
-    </div>
+    </table>   
   </div>
-  
+  <div class="button"> 
+    <%= link_to image_tag("/images/admin/left.png")+"返回", admin_tours_path(), class: "left" %>
+  </div>
 </article>
  <script>
   $(function() {

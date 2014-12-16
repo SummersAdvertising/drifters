@@ -8,34 +8,30 @@
 
 <article>
   <div class="list">
-
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      
-      <% @contacts.each do |contact| %>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">      
+      <% @contacts.each do |contact| %>      
         <tr>
-          <td width="6%" class="icon"></td>
-          <td width="21%"><span class="time"><%= contact.created_at.strftime("%Y-%m-%d %H:%M") %></span><br>
-            <%= contact.name %><a class="email"><img src="/images/admin/msg.png">
-            <p><%= contact.email %></p></a><%= contact.gender %></td>
-          <td width="60%">
-          <h6><%= contact.subject %></h6>
-          <p><%= contact.content %></p>
-          <p><%= contact.address %></p>
-          <p><%= contact.departure_date %></p>
+          <td width="20%" valign="top"><span class="time"><%= contact.created_at.strftime("%Y-%m-%d %H:%M") %></span><br>
+            <%= contact.name %>(<%= contact.gender %>)
           </td>
-          <td width="13%">
+          <td width="67%" valign="top">
+          信箱：<%= contact.email %><br>
+          電話：<%= contact.phone %><br>
+          地址：<%= contact.address %><br>
+          日期：<%= contact.departure_date %><br>
+          行程：<%= contact.subject %><br><br>
+          <p><%= contact.content %></p>
+          </td>
+          <td width="13%" valign="top">
             <div class="tool">
               <%= get_contact_status(contact) %><%# contacts_helper %>
             </div>
           </td>
-        </tr>
+        </tr>       
       <% end %>
-
     </table>
   </div>
-
   <div class="page">
     <%= paginate @contacts ,:window => 2 %>
-  </div>
-
+  </div>  
 </article>

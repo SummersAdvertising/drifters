@@ -339,25 +339,8 @@ select{
 	/*內文&時間*/
 	p,.time{
 		font-size:.9em;
-		color:#777
-	}
-
-	/*信箱*/
-	.email{
-		position:relative;
-		left:10px;
-		top:5px;
-		p{
-			display:none;
-			background:#333;
-			color:#fff;
-			padding:5px 10px;
-			position:absolute;
-			top:-40px;
-			left:-55px;
-			border-radius: 5px
-		}
-		&:hover p{display:block;}
+		color:#777;
+		line-height:1.7em
 	}
 }
 
@@ -365,7 +348,7 @@ select{
 
 .button{
 	overflow:hidden;
-	a{
+	a,button{
 		display:block;
 		color:#555;
 		width:125px;
@@ -384,6 +367,7 @@ select{
 		img{margin:0 0 0 15px}
 	}
 }
+form .button{margin:30px 0 0 0;}
 
 /*-----------------------------------------------------------------------表單---*/
 

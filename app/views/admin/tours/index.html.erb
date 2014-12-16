@@ -1,43 +1,24 @@
 <header>
-  <h2 class="left">Departures</h2>
+  <h2 class="left">出團資訊</h2>
 </header>
 
 <article>
-  <div class="hgroup">
-    <h3 class="left">
-      
-    </h3>
-    <div class="button right">
-      
-    </div>
-  </div>
-
   <div class="list">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">      
       <% @tours.each do |tour| %>
-      
         <tr>
-          <td width="44%">
+          <td width="30%">
             <%= link_to admin_tour_departures_path(tour) do %>
-              Name:<%= tour.name %>
-            <% end %>
+              <%= tour.name %>
+            <% end %>            
           </td>
-          <td width="44%">
-            <%= link_to admin_tour_departures_path(tour) do %>
+          <td width="70%">
+          <%= link_to admin_tour_departures_path(tour) do %>
               <%= tour.en_name %>
             <% end %>
           </td>
-          <td width="12%">
-            <div class="tool">
-              
-            </div>
-          </td>
-        </tr>
-        
+        </tr>        
       <% end %>
-
     </table>
   </div>
-
 </article>
