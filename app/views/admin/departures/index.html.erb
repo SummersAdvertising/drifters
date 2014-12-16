@@ -18,10 +18,10 @@
       
         <tr <%= "id=Departurecontainer_#{departure.id.to_s}" %> class='dragable' >
           <td width="18%">
-            <%= departure.name %>
+            <%= get_departure_type(departure) %>
           </td>
           <td width="70%">
-            <%= departure.tour.name %>
+            <%= departure.name %>
           </td>
           </td>
           <td width="12%">
