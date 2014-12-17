@@ -28,15 +28,15 @@ jQuery(document).ready(function(){
   )).addTween('#article-3', 
   TweenMax.to($('#article-3 .level img'), 1, 
     //{css:{'background-image':'url(http://park.summers.com.tw/toto/drifters/images/idx-27.png)'}}
-    {css:{opacity:1}}
+    {css:{opacity:1},ease:Expo.easeIn}
   )).addTween('#article-4', 
   TweenMax.to($('#article-4 .level img'), 1, 
     //{css:{'background-image':'url(http://park.summers.com.tw/toto/drifters/images/idx-28.png)'}}
-    {css:{opacity:1}}
+    {css:{opacity:1},ease:Expo.easeIn}
   )).addTween('#article-5', 
   TweenMax.to($('#article-5 .level img'), 1, 
     //{css:{'background-image':'url(http://park.summers.com.tw/toto/drifters/images/idx-29.png)'}}
-    {css:{opacity:1}}
+    {css:{opacity:1},ease:Expo.easeIn}
   ))
 
   .addTween('#article-2', 
