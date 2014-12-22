@@ -418,6 +418,11 @@ article #content {
 	padding:5% 0 0 0;
 	min-height:500px;
 }
+@media (max-width:767px) {
+	article #content {
+		min-height:250px;
+	}
+}
 article #content #form {
 	background:url(../images/trv-02.gif);
 	padding:5% 10%
