@@ -415,7 +415,8 @@ article #tab .active a {
 	}
 }
 article #content {
-	padding:5% 0 0 0
+	padding:5% 0 0 0;
+	min-height:500px;
 }
 article #content #form {
 	background:url(../images/trv-02.gif);
