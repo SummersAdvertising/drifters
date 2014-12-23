@@ -6,13 +6,22 @@
 <body>
   <%= render "drifters_mailer/header_logo" %>  
   
-  <p>親愛的管理員 ___ 您好：</p>
+  <p>親愛的管理員，您好：</p>
+  <p>有新的報名信件，快回來<%= link_to "後台", new_admin_session_url ,target: "_blank" %>管理吧！</p>
 
-  <p>留言：</p>
-  <p><%= @contact.subject %></p>
-  <p><%= @contact.name %></p>
-  <p><%= @contact.email %></p>
-  <p><%= @contact.phone %></p>
+  <p>資訊：</p>  
+  <p>姓名：<%= @contact.name %></p>
+  <p>性別：<%= @contact.gender %></p>
+  <p>電話：<%= @contact.phone %></p>
+  <p>信箱：<%= @contact.email %></p>
+  <% unless @contact.address.blank? %>
+    <p>地址：<%= @contact.address %></p>
+  <% end %>
+  <p>行程：<%= @contact.subject %></p>
+  <% unless @contact.departure_date.blank? %>
+    <p>出發日期：<%= @contact.departure_date %></p>
+  <% end %>
+  <p>留言內容：</p>
   <p><%= @contact.content %></p>
 
   <%= render "drifters_mailer/footer" %>
