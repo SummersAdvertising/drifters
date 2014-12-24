@@ -12,9 +12,8 @@ class DriftersMailer < ActionMailer::Base
 
       @contact = contact
       # through api: set params
-      # 'adam@summers.com.tw', 'chris@summers.com.tw'
-      @data[:to] = [ 'adam@summers.com.tw', 'chris@summers.com.tw' ]
-      # @data[:to] = [ 'info@crown-yourafrica.com', 'baowei@bwtravel.com.tw' ]
+      # @data[:to] = [ 'adam@summers.com.tw', 'chris@summers.com.tw' ]
+      @data[:to] = [ 'info@crown-yourafrica.com', 'baowei@bwtravel.com.tw' ]
       @data[:subject] = "報名通知" # 主旨
       @data[:html] = render_to_string('contact_notice').to_str # 內容
       # through api: set params end
