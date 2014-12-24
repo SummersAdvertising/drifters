@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href='/images/favicon.ico' rel='shortcut icon' />
+<link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<title>大旅行家 Drifters - 帶你深入非洲</title>
+<meta name="keywords" content="大旅行家,非洲旅行團,非洲旅遊,寶崴旅行社,寶崴,維多利亞瀑布旅遊,東非旅遊,南非旅遊,非洲自由行,非洲半自助,drifters,Drifters Truck,探險旅遊,卡車旅遊,獵遊,國外旅遊,國外旅遊推薦,旅遊行程,納米比亞沙漠旅遊,奧卡萬戈旅遊,克魯格國家公園,非洲草原旅遊,非洲卡車,非洲動物旅遊,烏干達旅遊,莫三比克旅遊,辛巴威旅遊,波札那旅遊,非洲野生動物旅遊,冒險旅遊,動物大遷徙旅遊,非洲露營,非洲背包客,非洲越野車旅遊"/>
+<meta name="description" content="大旅行家越野系列深入非洲原始蠻荒地帶，遠離文明，如果你喜歡冒險，喜歡用新生兒的眼光看世界，汲取最獨一無二的經驗，大旅行家越野系列將帶給你超越五星級的收穫與體驗。" />
+<meta property="og:site_name" content="大旅行家 Drifters - 帶你深入非洲"/>
+<meta property="og:title" content="大旅行家 Drifters - 帶你深入非洲"/>
+<meta property="og:description" content="大旅行家越野系列深入非洲原始蠻荒地帶，遠離文明，如果你喜歡冒險，喜歡用新生兒的眼光看世界，汲取最獨一無二的經驗，大旅行家越野系列將帶給你超越五星級的收穫與體驗。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://www.drifters.com.tw"/>
+<meta property="og:image" content="http://www.drifters.com.tw/images/thumb.jpg">
+<link rel="image_src" href="http://www.drifters.com.tw/images/thumb.jpg">
+<!-- Bootstrap -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:/ -->
+<!--[if lt IE 9]>
+      <script src="https:/oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https:/oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56172097-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<%= render 'layouts/front_shared_header' %>
+
+<link href="/css/itinerary.less" rel="stylesheet/less" />
+<link href="/css/print.less" rel="stylesheet/less" media="print"/>
+<style>
+  #banner{background-image:url(/images/mz-01.jpg)}
+</style>
+
+<article>
+  <section id="article-1">
+    <div class="container text-center">
+      <h3>大旅行家探險行程</h3>
+      <h4>莫三比克海陸大探索 14 天</h4>
+      <div class="row" id="intro">
+        <div class="col-sm-3 clearfix">
+          <img src="images/itn-01.png" class="img-responsive"><br><p>每月的第 3 個星期四</p>
+        </div>
+        <div class="col-sm-3 clearfix">
+          <img src="images/itn-02.png" class="img-responsive"><br><p>約翰尼斯堡>約翰尼斯堡</p>
+        </div>
+        <div class="col-sm-3 clearfix">
+          <img src="images/itn-25.png" class="img-responsive"><br><p>9 晚帳篷型住宿／小屋／旅館</p>
+        </div>
+        <div class="col-sm-3 clearfix">
+          <img src="images/itn-18.png" class="img-responsive"><br><p>4 晚露營</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 text-left">
+          <p>莫三比克充滿了多民族文化風情，從最初的遊牧民族，阿拉伯商人，英國水手一直到葡萄牙殖民者，再到後來撕裂國家的 20 多年內戰，都對這個國家產生了莫大的影響。不久之前，莫三比克才因為和平的到來和新近獲得的經濟成長，對外開放旅遊。這塊旅遊處女地，擁有原封不動的曠野美景，原汁原味的大自然風光，杳無人煙的海灘以及獨特的文化遺產，觸目所及都是珍貴的旅遊寶藏。這趟旅程結合了著名的克魯格國家公園和赫魯赫魯威（Hluhluwe）國家公園，這兩個著名的公園為野生動物提供了最自然的環境，以及最近才開放的跨境和平公園（Transfrontier Peace Park）和史瓦濟蘭野生動物公園等等。我們也會造訪自然和文化景點，並且在荒蕪的印度洋海邊逗留。同時，我們還會去首都馬布托，體驗拉丁文化和市街景觀。</p>
+        </div>
+        <div class="col-sm-4 text-center"><img src="images/mz-02.jpg" class="img-responsive"> </div>
+      </div>
+    </div>
+  </section>  
+  <section id="article-5">
+    <div class="container">
+    ( 用餐資訊：B=Breakfast, L=Lunch, D=Dinner )
+    </div>
+  </section>
+  <section id="article-2">
+    <div class="container row">
+      <div class="col-sm-8" id="accordion">
+        <h5><span class="day">Day1</span>約翰尼斯堡─叢林小屋旅館（Bush Camp）</h5>
+        <div>
+          <p>06：30 從約翰尼斯堡綠火旅館出發，前往風光明媚的普馬蘭加省（Mpumalanga），沿途我們會造訪許多景點，包括因為淘金而興起的朝聖者的休憩地（Pilgrims Rest）小村，以及高高聳立在布萊德河峽谷（Blyde River Canyon）自然保護區上的三茅屋岩（Three Rondavels）。下午我們沿著曲折的斷崖往下走到低地灌叢草原，投宿在舒適的綠火叢林小屋旅館。這座旅館，位於大克魯格國家公園的巴魯勒（Balule）野生動物保護區中。晚餐過後我們搭乘敞篷車夜間獵遊。<span>D</span></p>           
+        </div>
+        <h5><span class="day">Day2</span>叢林小屋旅館─克魯格</h5>
+        <div>
+          <p>與非洲的朝陽同時起床，開始叢林漫步尋覓野生動物中的五霸，時時停下腳步學習叢林中的知識。我們的嚮導會向我們解說動物的生態，並且告訴我們追蹤動物的秘訣。回到旅館悠閒地吃個健康的早午餐，接下來可到在泳池邊小憩，或是盡情地享受大自然。休憩完畢，我們整裝前往舉世聞名，並且被譽為非洲最出色的自然保護區的克魯格國家公園。我們在公園中驅車獵遊，尋找各式各樣的動物和鳥類，我們將在這個公園裡的營區渡過兩晚。<span>Brunch D</span></p>
+          <img src="images/mz-03.jpg" class="img-responsive">             
+        </div>
+        <h5><span class="day">Day3</span>克魯格國家公園（Kruger National Park）</h5>
+        <div>
+          <p>今天一整天的都在裝備齊全的車子上觀賞野生動物。今天要尋找五霸。晚上露營。<span>BLD</span></p>           
+        </div>
+        <h5><span class="day">Day4</span>莫三比克跨境公園</h5>
+        <div>
+          <p>早上經過短暫地驅車獵遊之後離開南非。從這裡開始，我們沿著道路兩旁樹叢夾道的道路前行，進入莫三比克境內的跨境和平公園，這裡完全未受人為污染，能夠來此是一大殊榮。公園中的灌木叢青翠而茂密，不僅有出塵之美，也給了野生動物生長的絕佳環境。園中種類繁多的植物，也使得這裡成為非洲最佳的賞鳥區。我們會在馬辛基爾湖（Massingir Lake）畔紮營過夜，並且展開步行和乘車的獵遊。<span>BLD</span></p> 
+          <img src="images/mz-04.jpg" class="img-responsive">         
+        </div>
+        <h5><span class="day">Day5~6</span>賽賽（Xai Xai）</h5>
+        <div>
+          <p>今天離開公園，穿越林波波沖積平原，途經多處大大小小的村莊，最後終於到達迷人的印度洋。我們接下來的兩個晚上就要在這個躲在龐大的沙丘之後，偏遠的海邊渡假村渡過，這座龐大的沙丘分隔了大海和內陸的淡水湖系統。我們有充分的時間玩衝浪和拜訪附近地區。<span>BLD；BLD</span></p>             
+        </div>
+        <h5><span class="day">Day7~9</span>伊尼楊巴內（Inhambane）</h5>
+        <div>
+          <p>沿著海岸往北走，我們來到了馬希榭（Maxixe），並且從馬希榭搭乘傳統單桅帆船穿過海灣跟當地土著互動，而司機導遊則開車到古老的貿易港口伊尼楊巴內來接我們。我們會先花點時間探索和拜訪當地熱鬧繁忙的市場，然後再前往椰子樹下的海灘營地。我們有 3 晚會住在相對來說相當舒適的營地小屋（casitas）中，在莫三比克著名的無人海灘上悠閒地放鬆，浮潛，或是曬太陽。最後一天的晚上，我們會享用一頓自助大餐（自費）。同時團員也可以參加自選行程中的水肺潛水或海灘騎馬（自費）。<span>BLD；BLD；BL</span></p>     
+          <img src="images/mz-05.jpg" class="img-responsive">          
+        </div>
+        <h5><span class="day">Day10</span>馬布多（Maputo）</h5>
+        <div>
+          <p>在得到充分的休息和日光浴之後，折回海岸到達首都馬布多。我們會開車拜訪這個往曾經繁華一時的都市。馬布多以拉丁文化自豪，街上林立的咖啡館和市場莫不充滿了拉丁風情。今晚我們投宿在一家舒適的飯店。在當地餐廳享用地方風味的海鮮大餐（自理）。膽子大的請一定要嚐嚐霹靂霹靂辣醬（Peri- Peri）。<span>BL</span></p>         
+        </div>
+        <h5><span class="day">Day11</span>史瓦濟蘭野生動物公園（Swaziland Game Park）</h5>
+        <div>
+          <p>我們帶著新的刺激回到叢林中。今天往南走，穿越迷你王國史瓦濟蘭。我們會花一整個下午探索這個地區著名的野生動物保護區，並在園內紮營。<span>BLD</span></p>   
+          <img src="images/mz-06.jpg" class="img-responsive">         
+        </div>
+        <h5><span class="day">Day12~13</span>祖魯蘭（Zululand）</h5>
+        <div>
+          <p>今天回到南非，進入曾經受到大名鼎鼎的祖魯國王夏卡統治的區域。我們會在祖魯蘭綠火營區住兩個晚上，這個充滿鄉村風味的營區在我們濱臨聖露西亞湖（Lake St Lucia），位於赫魯赫魯威附近的私人保護區之內。我們在這裡停留的期間，將在森林中漫步獵遊，並且到赫魯赫魯維國家公園中搭乘敞篷車獵遊。<span>BLD；BLD</span></p>                  
+        </div>  
+        <h5><span class="day">Day14</span>約翰尼斯堡</h5>
+        <div>
+          <p>今天穿越夸祖魯核心地帶納塔爾（Natal），在回到約堡的途中，我們會經過許多鄉間的祖魯村落和看到無數壯觀的景色。在快接近黃昏的時候抵達約翰尼斯堡。<span>B</span></p>                     
+        </div>
+      </div>
+      <div class="col-sm-3 col-sm-offset-1">
+        <aside>
+          <h5 id="aside-1">重要訊息</h5>
+          <ul>
+          <li style="background-image:url(images/itn-16.png)">本行程使用獵遊野營車，但是團員要有可能遇上行程延遲及體驗這些地區造成的不方便的心理準備。不良的路況，泛濫的河流和我們無法控制的其它因素，都可能導致行程改變，繞道等等。請帶著隨遇而安的心態與我們同行。我們偶爾也會由反方向操作這項行程。</li>
+          <li style="background-image:url(images/itn-08.png)">團員必需自行攜帶睡袋、枕頭和盥洗用的毛巾。</li>
+          <li style="background-image:url(images/itn-19.png)">  本旅程建議使用南非幣，可在約翰尼斯堡機場兌換。</li>         
+          <li style="background-image:url(images/itn-09.png)">出發前需要注射季節性瘧疾疫苗（當地也可施打）</li>
+          <li style="background-image:url(images/itn-26.png)">可以攜帶一個面罩和潛水用的鰭板以裨浮潛。某些渡假海灘有水肺潛水，想要參加的團員必須攜帶必要的證件。</li>
+          <li style="background-image:url(images/itn-23.png)">大部分國籍的團員還需具備莫三比克簽證，團員應該自行負責簽證問題，可以提早辦理。</li>
+          <li style="background-image:url(images/itn-12.png)">出發之前，每位旅客都需要簽署一項訂位條件和一般資訊的附屬合約。旅客也需要擁有完善的個人旅遊保險。</li>
+          </ul>
+          <h5 id="aside-2">團費須知</h5>
+          <ul>
+            <li style="background-image:url(images/itn-13.png)">包括所有的交通，住宿，列出的餐食，一位專業的導遊，團體裝備，特許証和公園入園費。</li>
+            <li style="background-image:url(images/itn-14.png)">不包括酒精飲料，瓶裝水，軟性飲料，美術珍品，簽證費，小費和自費行程。團員需自行購買個人物品。</li>
+            <li style="background-image:url(images/itn-15.png)">自費項目<span>（實際項目會依當地情況增減）</span>：<br>
+              <span>●</span> 浮潛<br>
+              <span>●</span> 遊船之旅<br>
+              <span>●</span> 水肺潛水<br>
+              <span>●</span> 沙灘騎馬
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <section id="article-3" class="hidden-xs">
+    <div class="container text-center">
+      <h4>精彩亮點</h4>
+      <div class="row">
+        <div class="col-md-2 col-sm-4"><p>私人叢林營區五霸</p></div>
+        <div class="col-md-2 col-sm-4"><p>未受破壞的海岸線</p></div>
+        <div class="col-md-2 col-sm-4"><p>克魯格國家公園</p></div>
+        <div class="col-md-2 col-sm-4"><p>馬布多</p></div>
+        <div class="col-md-2 col-sm-4"><p>未經人為污染的曠野</p></div>
+        <div class="col-md-2 col-sm-4"><p>史瓦濟蘭野生動物公園</p></div>
+        <div class="col-md-2 col-sm-4"><p>跨境和平公園</p></div>
+        <div class="col-md-2 col-sm-4"><p>赫魯赫魯威野生動物保護區</p></div>
+        <div class="col-md-2 col-sm-4"><p>單桅三角帆船之旅</p></div>
+        <div class="col-md-2 col-sm-4"><p>莫三比克村落文化</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="article-4" class="hidden-xs">
+    <div class="container">
+      <div class="clearfix">
+        <h4 class="pull-left">當地出發日期與空位</h4>
+        <p class="pull-left">（所有日期都是根據當地出發地，並非從台灣出發）</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+      </div>
+      <a href="travel.html">看更多>></a>
+    </div>
+  </section>
+</article>
+<%= render 'layouts/front_shared_footer' %>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <script src="/js/bootstrap.min.js"></script> 
+  <script src="/js/less.min.js"></script> 
+  <script src="/js/mousewheel.js"></script> 
+  <script src="/js/jquery.parallax-1.1.3.js"></script> 
+  <script src="/js/anchor-art.js"></script> 
+  </body>
+</html>

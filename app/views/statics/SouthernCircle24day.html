@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href='/images/favicon.ico' rel='shortcut icon' />
+<link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<title>大旅行家 Drifters - 帶你深入非洲</title>
+<meta name="keywords" content="大旅行家,非洲旅行團,非洲旅遊,寶崴旅行社,寶崴,維多利亞瀑布旅遊,東非旅遊,南非旅遊,非洲自由行,非洲半自助,drifters,Drifters Truck,探險旅遊,卡車旅遊,獵遊,國外旅遊,國外旅遊推薦,旅遊行程,納米比亞沙漠旅遊,奧卡萬戈旅遊,克魯格國家公園,非洲草原旅遊,非洲卡車,非洲動物旅遊,烏干達旅遊,莫三比克旅遊,辛巴威旅遊,波札那旅遊,非洲野生動物旅遊,冒險旅遊,動物大遷徙旅遊,非洲露營,非洲背包客,非洲越野車旅遊"/>
+<meta name="description" content="大旅行家越野系列深入非洲原始蠻荒地帶，遠離文明，如果你喜歡冒險，喜歡用新生兒的眼光看世界，汲取最獨一無二的經驗，大旅行家越野系列將帶給你超越五星級的收穫與體驗。" />
+<meta property="og:site_name" content="大旅行家 Drifters - 帶你深入非洲"/>
+<meta property="og:title" content="大旅行家 Drifters - 帶你深入非洲"/>
+<meta property="og:description" content="大旅行家越野系列深入非洲原始蠻荒地帶，遠離文明，如果你喜歡冒險，喜歡用新生兒的眼光看世界，汲取最獨一無二的經驗，大旅行家越野系列將帶給你超越五星級的收穫與體驗。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://www.drifters.com.tw"/>
+<meta property="og:image" content="http://www.drifters.com.tw/images/thumb.jpg">
+<link rel="image_src" href="http://www.drifters.com.tw/images/thumb.jpg">
+<!-- Bootstrap -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:/ -->
+<!--[if lt IE 9]>
+      <script src="https:/oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https:/oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56172097-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<%= render 'layouts/front_shared_header' %>
+
+<link href="/css/itinerary.less" rel="stylesheet/less" />
+<link href="/css/print.less" rel="stylesheet/less" media="print"/>
+<style>
+  #banner{background-image:url(/images/ci-01.jpg)}
+</style>
+
+<article>
+  <section id="article-1">
+    <div class="container text-center">
+      <h3>大旅行家冒險行程</h3>
+      <h4>周遊南部非洲 24 天</h4>
+      <div class="row" id="intro">
+        <div class="col-sm-2 clearfix col-sm-offset-1">
+          <img src="images/itn-01.png" class="img-responsive"><br><p>每月的第 2 個星期天</p>
+        </div>
+        <div class="col-sm-2 clearfix">
+          <img src="images/itn-02.png" class="img-responsive"><br><p>約翰尼斯堡>約翰尼斯堡</p>
+        </div>
+        <div class="col-sm-2 clearfix">
+          <img src="images/itn-03.png" class="img-responsive"><br><p>4/5 晚旅館</p>
+        </div>
+        <div class="col-sm-2 clearfix">
+          <img src="images/itn-22.png" class="img-responsive"><br><p>4 晚小木屋</p>
+        </div>
+        <div class="col-sm-2 clearfix">
+          <img src="images/itn-18.png" class="img-responsive"><br><p>14/15 晚露營</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 text-left">
+          <p>本團由約翰尼斯堡進出，搭機非常方便，繞一圈的走法可讓團員一次看遍南部非洲精華地區。這趟旅程將讓你看到南部非洲國家最美的部分，並且也讓你見識到本區極大的反差。我們可以從波札那的沙漠地貌一直玩到尚比亞青翠的森林，馬拉威的茶園和莫三比克杳無人煙的海岸，我們可以拜訪便利的都市，也可以一睹質樸的鄉間農舍，我們會踏上路況良好的高速公路，也會駛入塵土飛揚的小徑。同時，我們會進入非洲幾個最棒的野生動物保護區，包括喬貝（Chobe），盧安瓜（Luangwa）和克魯格，在這些地方會看到成千上萬生長在自然環境中的野生動物。參加這趟旅程需抱持著開放和彈性的心態。</p>
+        </div>
+        <div class="col-sm-4 text-center"><img src="images/ci-02.jpg" class="img-responsive"> </div>
+      </div>
+    </div>
+  </section>  
+  <section id="article-5">
+    <div class="container">
+    ( 用餐資訊：B=Breakfast, L=Lunch, D=Dinner )
+    </div>
+  </section>
+  <section id="article-2">
+    <div class="container row">
+      <div class="col-sm-8" id="accordion">
+        <h5><span class="day">Day1</span>約翰尼斯堡 ─ 法蘭西斯鎮（Francistown）</h5>
+        <div>
+          <p>06：30 在從約翰尼斯堡綠火旅館出發，直接駛往波札那邊界。完成邊界的檢查手續之後，前往法蘭西斯鎮的營區過夜。晚上邊享用大餐（自費），邊了解後續的行程。今晚上宿營。</p>           
+        </div>
+        <h5><span class="day">Day2</span>喬貝國家公園（Chobe National Park）</h5>
+        <div>
+          <p>今晨我們進入喬貝森林保護區，上行到雄偉的喬貝河和比鄰的國家公園，這裡的水塘畔有大量群居的非洲象。經過一個下午在喬貝公園的大範圍獵遊之後，我們穿越邊界前往維多利亞瀑布，以後幾個晚上，我們將住在舒適的維多利亞瀑布綠火旅館。<span>BLD</span></p>                 
+        </div>
+        <h5><span class="day">Day3~4</span>維多利亞瀑布（Victoria Falls）</h5>
+        <div>
+          <p>我們將會在這個「非洲探險之都」看到壯觀的維多利亞瀑布和其它的精彩景點。希望來點刺激的人，可以去嚐試高空彈跳，激流泛舟或是各式各樣的飛機飛越（自理）。一天晚上我們將在當地餐廳進餐（自費）。有機會的話，我們會進入尚比亞，並且在尚比西河畔露營。<span>BD；B</span></p>
+          <img src="images/ci-03.jpg" class="img-responsive">  
+        </div>
+        <h5><span class="day">Day5</span>卡富埃營區（Kafue Camp）</h5>
+        <div>
+          <p>跨越原始的鐵道橋，我們向維多利亞瀑布看上最後一眼，隨後進入尚比亞。今天的路徑是穿過尚比亞南部，進入下尚比西（Zambezi）谷地的卡富埃，我們在此紮營過夜。下午在游泳池畔休息，養精蓄銳，以應付未來幾天耗費體力的獨木舟。<span>BLD</span></p>      
+        </div>
+        <h5><span class="day">Day6~8</span>尚比西河獨木舟</h5>
+        <div>
+          <p>大名鼎鼎的尚比西河毋庸我們贅述，這條雄偉的河川蜿蜒流過非洲最棒的幾個荒野地帶，在這條河上划獨木舟也因此被譽為世界上最頂級的獨木舟冒險，有什麼可以比得上在獨木舟上近距離觀賞大型的野生動物呢。我們會有兩晚在尚比西河岸的野地中露營。第 3 天我們會搭船回卡富埃，好好洗個澡和享受一頓豐富的大餐。（自費）。<span>BLD；BLD；BL</span></p>    
+          <img src="images/ci-04.jpg" class="img-responsive">        
+        </div>
+        <h5><span class="day">Day9</span>盧安瓜（Lauangwa）</h5>
+        <div>
+          <p>回到我們的車子上，穿越尚比亞首都盧薩卡（Lusaka），然後沿著「大東部之路」抵達我們下一站的過夜營地。今天我們會兼程趕路。<span>BLD</span></p>         
+        </div>
+        <h5><span class="day">Day10~11</span>盧安瓜國家公園</h5>
+        <div>
+          <p>我們的下一站是盧安瓜國家公園，我們會有兩個晚上在河畔露營，這裡以河馬數量驚人而著稱。在此停留的兩天當中，我們會在公園廣大的腹地中盡情驅車獵遊，尋找迷人的花豹和其它讓這座公園在非洲獨佔鰲頭的珍稀動物。可自選夜間驅車獵遊行程（自費）。<span>BLD；BLD</span></p>    
+          <img src="images/ci-05.jpg" class="img-responsive">        
+        </div>
+        <h5><span class="day">Day12~13</span>馬拉威湖（Lake Malawi）</h5>
+        <div>
+          <p>跨越邊界進入馬拉威，第一站就是首都里朗威（Lilongwe），在採買雜貨和藝品之後，我們繼續駛往馬拉威內陸，大得像汪洋大海一般的馬拉威湖，這座淡水湖甚至還有「海灘」。在這座美麗的湖中可以浮潛，還可享受「海灘」以及跟熱情友善的當地人互動。我們在這裡的「海灘」上露營，渡過兩晚。<span>BLD；BLD</span></p>
+          <img src="images/ci-06.jpg" class="img-responsive">              
+        </div>
+        <h5><span class="day">Day14~15</span>馬蘭熱高原（Malanje Massive）</h5>
+        <div>
+          <p>我們往南走到達馬蘭熱，這座大理石岩層高原，由青翠的森林和茶園中拔地而起，高約 600 米。我們會在此紮營兩晚，並且到高原健行，從高原頂端俯視周遭的無敵美景。<span>BLD；BLD</span></p>     
+        </div>  
+        <h5><span class="day">Day16</span>希莫尤（Chimoio）</h5>
+        <div>
+          <p>經由布蘭岱（Blantyre）到達莫三比克，緊接著通過泰特走廊（Tete corridor），穿越尚比西河，沿著辛巴威邊境的山脈前進。我們在偏遠的希莫尤紮營，渡過一個狂野的夜晚。<span>BLD</span></p>                    
+        </div>
+        <h5><span class="day">Day17</span>維蘭庫洛（Vilanculos）</h5>
+        <div>
+          <p>把曠野拋在身後，今天我們在抵達海岸前會途經許多生氣蓬勃，熙熙攘攘的小村莊。我們的下一站是位於印度洋溫暖蔚藍海岸的維蘭庫洛，從這裡可以遠眺如詩如畫的巴扎魯托群島（Bazaruto　Archipelago）。我們今晚住在海灘上的小屋（casitas）裡，在當地餐廳進晚餐（自費）。<span>BL</span></p>                         
+        </div>
+        <h5><span class="day">Day18~20</span>伊尼楊巴內（Inhambane）</h5>
+        <div>
+          <p>沿著海岸往南走，我們的下一站為古老的貿易港口伊尼楊巴內。我們會先花點時間探索和拜訪當地熱鬧繁忙的市場，然後再前往椰子樹下的海灘營地。我們有3晚會住在相對來說相當舒適的營地小屋（casitas）中，在莫三比克著名的無人海灘上悠閒地放鬆，浮潛，或是曬太陽。最後一天的晚上，我們會享用一頓大餐（自費）。同時團員也可以參加自選行程中的水肺潛水或海灘騎馬（自費）。<span>BLD；BLD；BL</span></p>
+          <img src="images/ci-07.jpg" class="img-responsive">  
+        </div>
+        <h5><span class="day">Day21</span>馬布多（Maputo）</h5>
+        <div>
+          <p>今天我們穿越廣大的沿岸沖積平原，通過腰果森林（forests of Cashew nuts），抵達我們在莫三比克的最後一站──首都馬布多（晚餐自理）。<span>BL</span></p>
+        </div>
+        <h5><span class="day">Day22</span>克魯格國家公園 （Kruger National Park）</h5>
+        <div>
+          <p>馬布多以拉丁文化自豪，街上林立的咖啡館和市場莫不充滿了拉丁風情，今天早上我們會開車拜訪這個往曾經繁華一時的都市的街道和其它景點。下午我們會往回走進入南非的克魯格國家公園，並在園內紮營。<span>BLD</span></p>
+        </div>
+        <h5><span class="day">Day23</span>克魯格國家公園─霧觀 （Hazyview）</h5>
+        <div>
+          <p>到了非洲怎可落掉克魯格，我們會花一整天的時間在這個首選的國家公園裡觀賞野生動物，下午我們到不遠處的霧觀綠火旅館住宿。<span>BLD</span></p>
+        </div>
+        <h5><span class="day">Day24</span>約翰尼斯堡</h5>
+        <div>
+          <p>今天悠閒地起床，在漫步獵遊之後，於午後驅車回到約翰尼斯堡的約翰尼斯堡綠火旅館。<span>B</span></p>
+        </div>
+      </div>
+      <div class="col-sm-3 col-sm-offset-1">
+        <aside>
+          <h5 id="aside-1">重要訊息</h5>
+          <ul>
+          <li style="background-image:url(images/itn-16.png)">在開發中國家的旅途可能會有繞路，延後或者其它的種種不便，團員需要抱持著開放和隨遇而安的心態才能盡情享受這趟旅程。</li>
+          <li style="background-image:url(images/itn-08.png)">團員必需自行攜帶睡袋、枕頭和盥洗用的毛巾。</li>        
+          <li style="background-image:url(images/itn-09.png)">建議出發前注射季節性瘧疾疫苗(當地也可以施打)。</li>
+          <li style="background-image:url(images/itn-20.png)">馬蘭熱健行需攜帶輕便背包
+          
+          <li style="background-image:url(images/itn-23.png)">任何國籍的團員都需要莫三比克簽證，某些國籍的團員則需要馬拉威和尚比亞的簽證，團員必需自行處理證件問題。</li>
+          <li style="background-image:url(images/itn-12.png)">出發之前，每位旅客都需要簽署一項訂位條件和一般資訊的附屬合約。旅客也需要擁有完善的個人旅遊保險。</li>
+          </ul>
+          <h5 id="aside-2">團費須知</h5>
+          <ul>
+            <li style="background-image:url(images/itn-13.png)">包括所有的交通，住宿，進入費和特許證，驅車和漫步獵遊。維多利亞瀑布入內費，獨木舟之旅，團體裝備，專業導遊和大部份的餐食。</li>
+            <li style="background-image:url(images/itn-14.png)">不包括酒精飲料，瓶裝水，軟性飲料，美術珍品，小費和自費行程。</li>
+            <li style="background-image:url(images/itn-15.png)">自費項目<span>（實際項目會依當地情況增減）</span>：<br>
+              <span>●</span> 騎大象獵遊<br>
+              <span>●</span> 激流泛舟<br>
+              <span>●</span> 高空彈跳<br>
+              <span>●</span> 水肺潛水<br>
+              <span>●</span> 盧安瓜驅車夜遊<br>
+              <span>●</span> 深海釣魚<br>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <section id="article-3" class="hidden-xs">
+    <div class="container text-center">
+      <h4>精彩亮點</h4>
+      <div class="row">
+        <div class="col-md-2 col-sm-4"><p>拜訪 6 個國家</p></div>
+        <div class="col-md-2 col-sm-4"><p>單桅三角帆船之旅</p></div>
+        <div class="col-md-2 col-sm-4"><p>莫三比克「海灘」</p></div>
+        <div class="col-md-2 col-sm-4"><p>喬貝遊船</p></div>
+        <div class="col-md-2 col-sm-4"><p>維多利亞瀑布</p></div>
+        <div class="col-md-2 col-sm-4"><p>尚比西河獨木舟之旅</p></div>
+        <div class="col-md-2 col-sm-4"><p>盧安瓜國家公園</p></div>
+        <div class="col-md-2 col-sm-4"><p>馬拉威河</p></div>
+        <div class="col-md-2 col-sm-4"><p>馬蘭熱高原健行</p></div>
+        <div class="col-md-2 col-sm-4"><p>馬布多</p></div>
+        <div class="col-md-2 col-sm-4"><p>克魯格國家公園</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="article-4" class="hidden-xs">
+    <div class="container">
+      <div class="clearfix">
+        <h4 class="pull-left">當地出發日期與空位</h4>
+        <p class="pull-left">（所有日期都是根據當地出發地，並非從台灣出發）</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+      </div>
+      <a href="travel.html">看更多>></a>
+    </div>
+  </section>
+</article>
+<%= render 'layouts/front_shared_footer' %>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <script src="/js/bootstrap.min.js"></script> 
+  <script src="/js/less.min.js"></script> 
+  <script src="/js/mousewheel.js"></script> 
+  <script src="/js/jquery.parallax-1.1.3.js"></script> 
+  <script src="/js/anchor-art.js"></script> 
+  </body>
+</html>

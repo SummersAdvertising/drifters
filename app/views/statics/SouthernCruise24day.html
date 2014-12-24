@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href='/images/favicon.ico' rel='shortcut icon' />
+<link href="/images/favicon.ico" rel="icon" type="image/x-icon" />
+<link rel="shortcut icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+<link rel="icon" href="/images/favicon.ico" type="image/vnd.microsoft.icon">
+<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+<%= csrf_meta_tags %>
+<title>大旅行家 Drifters - 帶你深入非洲</title>
+<meta name="keywords" content="大旅行家,非洲旅行團,非洲旅遊,寶崴旅行社,寶崴,維多利亞瀑布旅遊,東非旅遊,南非旅遊,非洲自由行,非洲半自助,drifters,Drifters Truck,探險旅遊,卡車旅遊,獵遊,國外旅遊,國外旅遊推薦,旅遊行程,納米比亞沙漠旅遊,奧卡萬戈旅遊,克魯格國家公園,非洲草原旅遊,非洲卡車,非洲動物旅遊,烏干達旅遊,莫三比克旅遊,辛巴威旅遊,波札那旅遊,非洲野生動物旅遊,冒險旅遊,動物大遷徙旅遊,非洲露營,非洲背包客,非洲越野車旅遊"/>
+<meta name="description" content="大旅行家越野系列深入非洲原始蠻荒地帶，遠離文明，如果你喜歡冒險，喜歡用新生兒的眼光看世界，汲取最獨一無二的經驗，大旅行家越野系列將帶給你超越五星級的收穫與體驗。" />
+<meta property="og:site_name" content="大旅行家 Drifters - 帶你深入非洲"/>
+<meta property="og:title" content="大旅行家 Drifters - 帶你深入非洲"/>
+<meta property="og:description" content="大旅行家越野系列深入非洲原始蠻荒地帶，遠離文明，如果你喜歡冒險，喜歡用新生兒的眼光看世界，汲取最獨一無二的經驗，大旅行家越野系列將帶給你超越五星級的收穫與體驗。"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="http://www.drifters.com.tw"/>
+<meta property="og:image" content="http://www.drifters.com.tw/images/thumb.jpg">
+<link rel="image_src" href="http://www.drifters.com.tw/images/thumb.jpg">
+<!-- Bootstrap -->
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:/ -->
+<!--[if lt IE 9]>
+      <script src="https:/oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https:/oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56172097-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+<body>
+
+<%= render 'layouts/front_shared_header' %>
+
+<link href="/css/itinerary.less" rel="stylesheet/less" />
+<link href="/css/print.less" rel="stylesheet/less" media="print"/>
+<style>
+  #banner{background-image:url(/images/cr-01.jpg)}
+</style>
+
+<article>
+  <section id="article-1">
+    <div class="container text-center">
+      <h3>大旅行家冒險行程</h3>
+      <h4>南部非洲巡弋之旅 24 天</h4>
+      <div class="row" id="intro">
+        <div class="col-sm-2 clearfix col-sm-offset-1">
+          <img src="images/itn-01.png" class="img-responsive"><br><p>每週六出發</p>
+        </div>
+        <div class="col-sm-2 clearfix">
+          <img src="images/itn-02.png" class="img-responsive"><br><p>開普敦>約翰尼斯堡</p>
+        </div>
+        <div class="col-sm-2 clearfix">
+          <img src="images/itn-03.png" class="img-responsive"><br><p>6 晚旅館</p>
+        </div>
+        <div class="col-sm-2 clearfix">
+          <img src="images/itn-22.png" class="img-responsive"><br><p>2 晚小木屋</p>
+        </div>
+        <div class="col-sm-2 clearfix">
+          <img src="images/itn-18.png" class="img-responsive"><br><p>12 晚露營</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8 text-left">
+          <p>從活力十足的開普敦出發，到達灼熱的納米比亞沙漠和波札那與辛巴威的野生動物庇護所，這趟挖空心思的旅程將本區最精彩的部份呈現在團員面前。除此之外，我們也會在奧倫治河（Orange River）上划獨木舟，攀爬巨大的沙丘，在非洲最著名的幾個國家公園中驅車獵遊，以及觀賞雄偉壯觀的維多利亞瀑布，為團員提供不一而足的感官刺激。我們的足跡遍及最偏僻和最艱困的道路，團員一定要有心理準備，但是我們保證團員在經歷各種疲累困乏和舟車勞頓之後所見識到的大自然奇景，絕對讓你永生難忘。這是一趟真正的冒險之旅。</p>
+        </div>
+        <div class="col-sm-4 text-center"><img src="images/cr-02.jpg" class="img-responsive"> </div>
+      </div>
+    </div>
+  </section>  
+  <section id="article-5">
+    <div class="container">
+    ( 用餐資訊：B=Breakfast, L=Lunch, D=Dinner )
+    </div>
+  </section>
+  <section id="article-2">
+    <div class="container row">
+      <div class="col-sm-8" id="accordion">
+        <h5><span class="day">Day1~2</span>開普敦</h5>
+        <div>
+          <p>我們於當地 13：00 在開普敦綠火旅館集合，當天下午就開始尋幽訪勝。我們會待在這裡一天半，爬桌山，拜訪開普角，濱海區，豪特灣（Hout Bay），一座酒莊，以及無數的其它景點。實際的行程會視氣候而定。我們會在海灘邊的綠火旅館住宿兩天（午餐及晚餐自理）。<span>B；B</span></p>           
+          <img src="images/cr-03.jpg" class="img-responsive">
+        </div>
+        <h5><span class="day">Day3</span>西海岸</h5>
+        <div>
+          <p>離開開普敦，向桌山回望最後一眼，穿越灣區，向北走到史瓦特蘭（Swartland），再沿著西海岸進入納馬庫蘭（Namaqualand）。這片不毛的荒地到了早春時節往往生機盎然，開滿了無數適應沙漠氣候的花朵。今晚住宿在海岸邊。<span>BD</span></p>                 
+        </div>
+        <h5><span class="day">Day4~5</span>奧倫治河（Orange River）</h5>
+        <div>
+          <p>今天穿越邊境進入納米比亞，接下來開一小段路到我們位於奧倫治河邊的基地營，從這裡我們要開始獨木舟探險。一旦將所有的需要裝備放進兩人獨木舟之後，我們就開始用力地划向荒野。奧倫治河沿岸鬼斧神工，它就像是一條蜿蜒穿過理查斯維德國家公園（Richtersveld National Park）裡的荒漠和高山的綠色絲帶。我們第一天晚上會在岸邊紮營住宿，仰頭望著沙漠的星空入睡，第二天則返回基地營取回車子，在相對來說較為舒適的環境下過夜。<span>BLD；BLD</span></p>  
+          <img src="images/cr-04.jpg" class="img-responsive"> 
+        </div>
+        <h5><span class="day">Day6</span>魚河峽谷（Fish River Canyon）─納米比</h5>
+        <div>
+          <p>今天直接前往魚河峽谷，這是世界上第二大的峽谷，可以比美美國大峽谷。在造訪過觀景點和峽谷邊緣之後，我們繼續深入納米比，並且在綠火沙漠營區紮營。<span>BLD</span></p>      
+        </div>
+        <h5><span class="day">Day7</span>納米比沙漠</h5>
+        <div>
+          <p>綠火沙漠營區位於納米布蘭自然保護區的私人自然保護區之內，周遭有無數適應沙漠環境的動物和植物。這個營區位在陡峭的裸石山壁和一片紅色沙丘之間，景色十分壯觀。我們會在這裡漫步和驅車獵遊好幾次，其中還包括一次在保護區內的夜間驅車獵遊，藉此我們可以近距離地觀賞野生動物。<span>BLD</span></p>        
+          <img src="images/cr-05.jpg" class="img-responsive">  
+        </div>
+        <h5><span class="day">Day8</span>索蘇斯雷（Sossusvlei）</h5>
+        <div>
+          <p>輕鬆地起床吃早餐，直接前往索蘇斯雷（Sossusvlei）紅色沙丘區。行程最後的部份則是搭乘敞篷四輪傳動車穿越厚厚的沙地，在登上沙丘頂端俯視周遭美景之後，我們會回到原來的車子上，前往全鎮只有一間加油站，一間商店，一間旅館的奇特商棧孤獨小鎮（Solitaire），並在旅館附設的營地區紮營住宿。<span>BLD</span></p>         
+        </div>
+        <h5><span class="day">Day9</span>孤獨小鎮（Solitaire）─史瓦克蒙（Swakopmund）</h5>
+        <div>
+          <p>今天的旅程較短。我們會穿越庫塞布峽谷（Kuiseb Canyon）和諾克路福國家公園（Naukluft Park），前往濱海渡假城市史瓦克蒙，我們將在史瓦克蒙綠火旅館住宿兩晚。<span>BLD</span></p>          
+        </div>
+        <h5><span class="day">Day10</span>史瓦克蒙</h5>
+        <div>
+          <p>史瓦克蒙綠火旅館地理位置適中，是探索史瓦克蒙的最佳起點，這座渡假小城有海灘，市場，藝品店和種類繁多的自選冒險活動，包括四人協力車，騎馬，滑沙和高空跳傘等等。夜生活也相當精彩，值得體驗。今晚將在餐廳享受晚餐（自費）。<span>B</span></p>            
+        </div>
+        <h5><span class="day">Day11</span>布蘭德山（Brandberg）</h5>
+        <div>
+          <p>今天北上前往骷顱海岸（Skeleton Coast），之後轉往十字岬海豹保護區，這裡是數萬頭毛皮海豹的棲息地。接著我們往內陸走，深入沙漠拜訪居住在布蘭德山的布希曼人的石壁雕刻和壁畫，之後我們在布蘭德山腳下紮營過夜。希望今天能在近距離觀賞到稀有的非洲沙漠大象。<span>BLD</span></p>    
+          <img src="images/cr-06.jpg" class="img-responsive">   
+        </div>  
+        <h5><span class="day">Day12~13</span>伊托夏國家公園</h5>
+        <div>
+          <p>今天進入伊托夏國家公園，這裡可以看到許多大型的野生動物。我們架好營帳之後，下午就開始驅車獵遊。晚上則回到營地觀賞前來有照明設備的水坑旁喝水的動物。這兩天我們會頻頻在國家公園裡驅車獵遊。第二天晚上我們則會在營區的餐廳吃晚飯（自費）。<span>BLD；BL</span></p>                    
+        </div>
+        <h5><span class="day">Day14</span>卡普里維（Caprivi）</h5>
+        <div>
+          <p>離開嚴酷的沙漠景觀，向北前往鬱鬱蔥蔥的卡普里維區。今晚我們駐紮在宏偉的奧卡萬戈河（Okavango River）邊。<span>BLD</span></p>                         
+        </div>
+        <h5><span class="day">Day15~16</span>奧卡萬戈三角洲（Okavango Delta）</h5>
+        <div>
+          <p>今天先開一小段路到達鍋柄（Pan Handle），然後從這裡搭乘機動小艇到達奧卡萬戈三角洲的核心地帶。一旦抵達三角洲之後，我們改搭傳統獨木舟莫科洛（mekoro）進入偏僻的營地。這裡充滿了大自然的奇觀，並且有無數最渾然天成的野生動物。我們將在曠野之中紮營兩天，探索這個遠離塵囂的樂園。<span>BLD；BLD</span></p>
+          <img src="images/cr-07.jpg" class="img-responsive">
+        </div>
+        <h5><span class="day">Day17</span>馬翁（Maun）</h5>
+        <div>
+          <p>今天早晨搭傳統獨木舟莫科洛，再接駁機動小艇通過鍋柄，回到原來的座車，經過喀拉哈利沙漠，先到達馬翁，再到馬翁大旅行家旅館，下午我們可以泡在泳池中放鬆地休息。<span>BLD</span></p>
+        </div>
+        <h5><span class="day">Day18</span>納塔（Nata）</h5>
+        <div>
+          <p>悠閒地起床吃早餐之後，離開馬翁大旅行家旅館，經過馬卡迪卡迪鹽沼（Makgadikgadi Salt Pans），到達猶如綠洲般的納塔營地住宿。<span>BLD</span></p>
+        </div>
+        <h5><span class="day">Day19</span>卡斯納（Kasna）─維多利亞瀑布</h5>
+        <div>
+          <p>北上喬貝 （Chobe）森林保護區，前往邊境城市卡斯納，並取道以群居的動物著名的喬貝國家公園觀賞野生動物。午後穿越邊境，行駛片刻，到達維多利亞瀑布綠火旅館，舒舒服服地在此投宿兩天。今天晚上我們將在游泳池邊享受傳統的烤肉（braai）大餐。<span>BLD</span></p>
+          <img src="images/cr-08.jpg" class="img-responsive">
+        </div>
+        <h5><span class="day">Day20</span>維多利亞瀑布</h5>
+        <div>
+          <p>早上我們在「非洲的探險之都」──維多利亞瀑布旁睜開眼睛。我們將在此停留一整天，有大把大把的時間去探索瀑布和參加各式各樣的自費活動，譬如激流泛舟，高空彈跳，搭小飛機飛越瀑布等等（午餐及晚餐自理）。<span>B</span></p>
+          <img src="images/cr-09.jpg" class="img-responsive">
+        </div>
+        <h5><span class="day">Day21</span>萬基（Hwange）</h5>
+        <div>
+          <p>在城裡閒逛一陣子之後，又是該回到曠野的時候了。我們出城後，不一會兒就到了辛巴威最大的野生動物保護區──萬基。經過搭敞篷車／漫步獵遊之後，我們在偏僻的營區紮營，營區可以俯視一個野生動物常來的水坑。<span>BLD</span></p>
+        </div>
+        <h5><span class="day">Day22</span>布拉瓦約（Bulawayo）─馬托博（Matobo）</h5>
+        <div>
+          <p>今天南下到辛巴威的第二大都市─布拉瓦約，這裡的每條馬路都十分寬敞。隨後我們繼續前往馬托博區，午後進入國家公園觀賞野生動物，並且在灌木叢中步行追蹤犀牛。晚上住宿在被本地著名的漂石所圍繞的營區中。<span>BLD</span></p>
+          <img src="images/cr-10.jpg" class="img-responsive">
+        </div>
+        <h5><span class="day">Day23</span>馬榭提（Machete）</h5>
+        <div>
+          <p>繼續南下，穿越邊界回到南非，到達我們位於林波波山谷（Limpopo valley）私人野生動物保護區的灌木營地。<span>BLD</span></p>
+        </div>
+        <h5><span class="day">Day24</span>約翰尼斯堡</h5>
+        <div>
+          <p>早晨約略觀賞營區周遭布希曼人壯觀的壁畫之後，就啟程前往約翰尼斯堡。在接近黃昏的時後回到約翰尼斯堡綠火旅館，結束本次的旅程。<span>B</span></p>
+        </div>
+      </div>
+      <div class="col-sm-3 col-sm-offset-1">
+        <aside>
+          <h5 id="aside-1">重要訊息</h5>
+          <ul>
+          <li style="background-image:url(images/itn-16.png)">如果辛巴威出現不適合旅行的任何狀況，本團路線在辛巴威的部分將繞道波札那而行。</li>
+          <li style="background-image:url(images/itn-08.png)">團員必需自行攜帶睡袋、枕頭和盥洗用的毛巾。</li>        
+          <li style="background-image:url(images/itn-09.png)">出發前需要注射季節性瘧疾疫苗（當地也可施打）</li>
+          <li style="background-image:url(images/itn-21.png)">冬季夜間溫度可能降到極低，團員需要準備禦寒衣物。</li>
+          <li style="background-image:url(images/itn-10.png)">由於本團有大量的徒步行程，心臟病患不宜參加。</li>
+          <li style="background-image:url(images/itn-23.png)">需具備有效的護照。</li>
+          <li style="background-image:url(images/itn-12.png)">出發之前，每位旅客都需要簽署一項訂位條件和一般資訊的附屬合約。旅客也需要擁有完善的個人旅遊保險。</li>
+          </ul>
+          <h5 id="aside-2">團費須知</h5>
+          <ul>
+            <li style="background-image:url(images/itn-13.png)">包括所有的交通，食物（沒有正餐以外的零食），咖啡，茶，早餐的果汁，一位專業的導遊，團體裝備，住宿，特許証和公園入園費，維多利亞瀑布入內費。</li>
+            <li style="background-image:url(images/itn-14.png)">不包括酒精飲料，瓶裝水，軟性飲料，美術珍品，小費和自費行程。</li>
+            <li style="background-image:url(images/itn-15.png)">自費項目<span>（實際項目會依當地情況增減）</span>：<br>
+              <span>●</span> 搭小飛機俯視野生動物─奧卡萬戈<br>
+              <span>●</span> 四人協力車<br>
+              <span>●</span> 高空彈跳<br>
+              <span>●</span> 激流泛舟<br>
+              <span>●</span> 高空跳傘<br>
+              <span>●</span> 乘船觀賞海中生物<br>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+  <section id="article-3" class="hidden-xs">
+    <div class="container text-center">
+      <h4>精彩亮點</h4>
+      <div class="row">
+        <div class="col-md-2 col-sm-4"><p>桌山</p></div>
+        <div class="col-md-2 col-sm-4"><p>奧倫治河獨木舟之旅</p></div>
+        <div class="col-md-2 col-sm-4"><p>攀爬沙丘</p></div>
+        <div class="col-md-2 col-sm-4"><p>維多利亞瀑布國家公園</p></div>
+        <div class="col-md-2 col-sm-4"><p>納米比沙漠</p></div>
+        <div class="col-md-2 col-sm-4"><p>伊托夏國家公園</p></div>
+        <div class="col-md-2 col-sm-4"><p>馬托博國家公園</p></div>
+        <div class="col-md-2 col-sm-4"><p>奧卡萬戈三角洲</p></div>
+        <div class="col-md-2 col-sm-4"><p>驅車夜遊沙漠</p></div>
+        <div class="col-md-2 col-sm-4"><p>搭乘四輪傳動車前往索蘇斯雷</p></div>
+        <div class="col-md-2 col-sm-4"><p>步行追蹤犀牛</p></div>
+      </div>
+    </div>
+  </section>
+  <section id="article-4" class="hidden-xs">
+    <div class="container">
+      <div class="clearfix">
+        <h4 class="pull-left">當地出發日期與空位</h4>
+        <p class="pull-left">（所有日期都是根據當地出發地，並非從台灣出發）</p>
+      </div>
+      <div class="row">
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+        <div class="col-md-3 col-sm-6"><div class="tag">2014.10.19<span>12</span></div></div>
+      </div>
+      <a href="travel.html">看更多>></a>
+    </div>
+  </section>
+</article>
+
+<%= render 'layouts/front_shared_footer' %>
+
+  <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <script src="/js/bootstrap.min.js"></script> 
+  <script src="/js/less.min.js"></script> 
+  <script src="/js/mousewheel.js"></script> 
+  <script src="/js/jquery.parallax-1.1.3.js"></script> 
+  <script src="/js/anchor-art.js"></script> 
+  </body>
+</html>
