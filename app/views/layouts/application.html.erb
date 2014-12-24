@@ -78,8 +78,22 @@ window.onload= function() {
               <li><%= link_to "南非生態探索之旅 18 天", page_pages_path('SouthAfrica18day'), 'data-no-turbolink' => true %></li>
             </ul>
           </li>
-          <li><%= link_to "探險行程", page_pages_path('comingsoon') %></li>
-          <li><%= link_to "冒險行程", page_pages_path('comingsoon') %></li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">探險行程</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "納米比亞秘境野營 12 天", page_pages_path('Namibia12day'), 'data-no-turbolink' => true %></li>
+              <li><%= link_to "烏干達越野探索 12 天", page_pages_path('Uganda12day'), 'data-no-turbolink' => true %></li>
+              <li><%= link_to "東非越野獵遊 12 天", page_pages_path('EastAfrica12day'), 'data-no-turbolink' => true %></li>
+              <li><%= link_to "莫三比克海陸探索 14 天", page_pages_path('Mozambique14day'), 'data-no-turbolink' => true %></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">冒險行程</a>
+            <ul class="dropdown-menu" role="menu">
+              <li><%= link_to "波札納獵遊野營 16 天", page_pages_path('Botswana16day'), 'data-no-turbolink' => true %></li>
+              <li><%= link_to "辛巴威越野露營獵遊 16 天", page_pages_path('Zimbabwe16day'), 'data-no-turbolink' => true %></li>
+              <li><%= link_to "南部非洲巡弋 24 天", page_pages_path('SouthernCruise24day'), 'data-no-turbolink' => true %></li>
+              <li><%= link_to "周遊東南非洲 24 天", page_pages_path('SouthernCircle24day'), 'data-no-turbolink' => true %></li>
+            </ul>
+          </li>
           <li><%= link_to "立刻報名", contacts_path, 'data-no-turbolink' => true %></li>
         </ul>
       </div>
