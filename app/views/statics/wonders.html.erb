@@ -24,7 +24,6 @@
 <meta property="og:image" content="http://www.drifters.com.tw/images/thumb.jpg">
 <link rel="image_src" href="http://www.drifters.com.tw/images/thumb.jpg">
 <!-- Bootstrap -->
-<link href="/css/wonders.less" rel="stylesheet/less" />
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:/ -->
 <!--[if lt IE 9]>
@@ -45,6 +44,14 @@
 <body>
 
 <%= render 'layouts/front_shared_header' %>
+
+<link href="/css/wonders.less" rel="stylesheet/less" />
+  <script>
+    $(document).ready(function(){
+      $('#article-2').parallax({offsetY:-200,speedFactor:.3}); 
+      $('#article-4').parallax({offsetY:-400,speedFactor:.3}); 
+    }); 
+  </script>
 
 <article>
   <section id="article-1">
@@ -152,12 +159,6 @@
   <script src="/js/mousewheel.js"></script> 
   <script src="/js/jquery.parallax-1.1.3.js"></script> 
   <script src="/js/anchor-art.js"></script> 
-  <script>
-    $(document).ready(function(){
-      $('#article-2').parallax({offsetY:-200,speedFactor:.3}); 
-      $('#article-4').parallax({offsetY:-400,speedFactor:.3}); 
-    }); 
-  </script>
-  
+
   </body>
 </html>
