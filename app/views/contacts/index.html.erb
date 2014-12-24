@@ -48,12 +48,10 @@
               <tr class="no-border">
                 <td colspan="2"> 欲參加的行程 <span>* 可複選</span><br>
                   <% @tours.each_with_index do | tour, index | %>
-                    <% if index <= 1 %>
-                      <label class="checkbox-inline">
-                      <%= f.check_box :subject, { :multiple => true, :name => "contact[subject][]" }, tour.name, nil %> 
-                        <%= tour.name %>
-                      </label>&nbsp;&nbsp;&nbsp;&nbsp;
-                    <% end %>
+                    <label class="checkbox-inline">
+                    <%= f.check_box :subject, { :multiple => true, :name => "contact[subject][]" }, tour.name, nil %> 
+                      <%= tour.name %>
+                    </label>&nbsp;&nbsp;&nbsp;&nbsp;
                   <% end %>
                   <label class="checkbox-inline">
                     <input id="contact_subject_18" name="contact[subject][]" type="checkbox" value="尚未決定"> 
