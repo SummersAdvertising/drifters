@@ -50,11 +50,29 @@ article{
 				padding:10% 0;
 				margin:10% 0;
 			}
-			img{
-				margin:0 0 5% 0;
-				@media(max-width: @md-device) {
-					max-width:62%;
+			.clearfix{
+				@media(max-width: @sm-device) {
+					margin:0 0 1% 0;
 				}
+				img{
+					margin:0 0 5% 0;
+					display:block;
+					@media(max-width: @md-device) {
+						max-width:62%;
+					}
+					@media(max-width: @sm-device) {
+						position:relative;
+						top:25px;
+						float:left;
+						max-width:18%;
+						margin:0 10% 0 0;
+					}
+				}
+				p{
+					@media(max-width: @sm-device) {
+						float:left;
+					}
+				}			
 			}
 		}
 	}
@@ -77,7 +95,6 @@ article{
 				line-height:1.7em;
 				color:#534741;	
 				position:relative;
-				cursor:pointer;
 				@media(max-width: @sm-device) {
 					padding:0 45px;
 					margin:65px 0 20px 0;
@@ -213,6 +230,7 @@ article{
 
 			}
 		}
+		span{font-size:.8em;}
 	}
 	#article-4{
 		background:url(../images/hdr-bg.gif);
@@ -255,6 +273,7 @@ article{
 	#article-5{
 		padding:0;
 		background:#EAE3D8;	
-		color:#534741;	
+		color:#a6937c;
+		font:300 .9em verdana,@font-family;
 	}
 }
