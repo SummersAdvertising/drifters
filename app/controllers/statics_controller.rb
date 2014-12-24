@@ -1,6 +1,6 @@
 #encoding: utf-8
 class StaticsController < ApplicationController
-  layout false #, only: [:index]
+  layout false , only: [:index]
   
   def index
     

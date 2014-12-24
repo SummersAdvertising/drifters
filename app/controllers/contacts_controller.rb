@@ -3,7 +3,7 @@ class ContactsController < ApplicationController
   #new business contact
   def index
     @contact = Contact.new()
-    @tours = Tour.order(:ranking).limit(2) #第一階段適用
+    @tours = Tour.order(:ranking)#.limit(2) #第一階段適用
     @genders = [['男','男'],['女','女']]
   end
 
@@ -22,7 +22,7 @@ class ContactsController < ApplicationController
           format.html { redirect_to contacts_path() }
         else
           
-          @tours = Tour.order(:ranking).limit(2) #第一階段適用
+          @tours = Tour.order(:ranking)#.limit(2) #第一階段適用
           @genders = [['男','男'],['女','女']]
           flash.now[:notice] = @contact.errors.messages.values.flatten.join('<br />')
           format.html { render :index }
@@ -31,7 +31,7 @@ class ContactsController < ApplicationController
     
     else
       @contact = Contact.new
-      @tours = Tour.order(:ranking).limit(2) #第一階段適用
+      @tours = Tour.order(:ranking)#.limit(2) #第一階段適用
       @genders = [['男','男'],['女','女']]
 
       flash.now[:alert] = "驗證碼錯誤"
