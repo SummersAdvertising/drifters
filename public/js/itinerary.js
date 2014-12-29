@@ -1,4 +1,4 @@
-$(document).ready(function(){
+/*$(document).ready(function(){
     $("#accordion").accordion({
       heightStyle: "content",
       active: false,
@@ -28,4 +28,13 @@ $(document).ready(function(){
         return false; // Cancels the default action
       }
     });
-  });   
+  });*/
+
+$(document).ready(function(){
+  $('#accordion div p span').append('<img class="info" src="/images/eat.png">')  
+  $('#accordion div p span').mouseover(function(){
+    $(this).children('.info').show();
+  }).mouseout(function(){
+    $('.info').hide();
+  })
+})  
