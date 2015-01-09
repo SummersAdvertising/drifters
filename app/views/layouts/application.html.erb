@@ -60,13 +60,19 @@ $(window).resize(function(){
 });
 
 $(document).ready(function() {
-  $('.dropdown').mouseenter(function(){
+  $('.dropdown').hover(function(){
     if( dpWidth > 1024 ){
       $(this).children('.dropdown-menu').stop().slideDown(200);
     }
-  }).mouseleave(function(){
+  },function(){
     if( dpWidth > 1024 ){
       $(this).children('.dropdown-menu').stop().slideUp(100);
+    }
+  })
+  $('.dropdown').click(function(){
+    if( dpWidth < 1024 ){
+      $(this).siblings().children('.dropdown-menu').hide();
+      $(this).children('.dropdown-menu').stop().toggle(200);
     }
   })
 })
