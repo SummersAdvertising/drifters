@@ -354,14 +354,9 @@ article #tab {
 	padding:0;
 	overflow:hidden
 }
-@media (max-width:767px) {
-article #tab {
-height:35px
-}
-}
 article #tab li {
 	float:left;
-	width:50%;
+	width:33%;
 	list-style:none;
 	text-align:center;
 	border-bottom:1px solid #ffd700
@@ -380,28 +375,34 @@ min-width:100px
 }
 article #tab li a {
 	color:#7e6b5a;
-	display:inline-block;
+	display:block;
 	font-size:1.6em;
-	padding:1% 10% .5% 10%;
+	padding:1% 0 .5% 0;
+	text-align: center;
 	position:relative;
 	top:1px;
 	border-top:1px solid #3c3431;
-	border-bottom:1px solid #ffd700
+	border-bottom:1px solid #ffd700;
+	white-space: nowrap;
 }
-@media (max-width:767px) {
+@media (max-width:991px) {
 	article #tab li a {
-		padding:0 10px 0 12px;
-		border:none
-	}
-}
-@media (max-width:480px) {
-	article #tab li a {
-		font-size:1.25em
+		font-size: 1.3em;
 	}
 }
 @media (max-width:767px) {
+	article #tab li {
+		width:100%;
+	}
+	article #tab li a {
+		padding:0;
+		border:none;
+		line-height: 40px;
+	}
 	article #tab li:first-child {
-		border-right:1px solid #fff !important
+		border-bottom:1px solid #fff !important
+	}article #tab li:last-child {
+		border-top:1px solid #fff !important
 	}
 }
 article #tab .active a {
@@ -577,4 +578,23 @@ margin:10% 0 0 0
 }
 iframe {
 	display:none !important
+}
+.expense{background:#82735b;margin:0 0 2px 0;}
+.expense h3{background:#a6937c;color:#FFF;padding:0 0 0 15px;font:300 1.3em/50px 微軟正黑體, Microsoft JhengHei;margin:0 0 28px 0;}
+.expense .row{margin:0;padding:0 28px 40px 0;}
+.expense .col-sm-4{width:40%;padding:0 30px 30px 30px;color:#FFF;}
+.expense .col-sm-4 h4{color:#362e2b;margin:0;padding:22px 0 0 70px;background:url(../images/ex-01.png) left top no-repeat;height:80px;font-size:1.45em;letter-spacing:6px;}
+.expense .col-sm-4 .price{font:300 1.7em/1.3em 微軟正黑體, Microsoft JhengHei;margin:20px 0 0 0;}
+.expense .col-sm-4 .price.year{font:300 1.3em/1.3em 微軟正黑體, Microsoft JhengHei;}
+.expense .col-sm-4 .price.year hr{border:0;border-bottom:1px dashed #FFF;}
+.expense .col-sm-4 .priceIntro{margin:10px 0 0 0;font:300 1.05em/1.8em 微軟正黑體, Microsoft JhengHei;}
+.expense .col-sm-8{width:60%;padding:0 30px 30px 30px;color:#362e2b;background:#f4ede3;border:5px solid #d1c0a5;}
+.expense .col-sm-8 h4{background:url(../images/ex-02.png) left center no-repeat;width:138px;font:300 1.2em/45px 微軟正黑體, Microsoft JhengHei;padding:0 0 0 20px;margin:10px 0 15px -42px;}
+.expense .col-sm-8 .elsePrice{font:300 1.08em/1.8em 微軟正黑體, Microsoft JhengHei;}
+@media (max-width:767px) {
+.expense h3{margin:0;}
+.expense .row{padding:15px;}
+.expense .col-sm-4,.expense .col-sm-8{width:100%;padding:15px;}
+.expense .col-sm-4{padding:0 0 20px 0;}
+.expense .col-sm-8 h4{margin:0 0 10px -30px;}
 }
