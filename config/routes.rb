@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :expenses
+  end
+
   devise_for :admins
   
   root "statics#index"

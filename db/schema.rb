@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141205033056) do
+ActiveRecord::Schema.define(version: 20151229050413) do
 
   create_table "admins", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(version: 20141205033056) do
     t.string   "name"
   end
 
-  add_index "admins", ["email"], name: "index_admins_on_email", unique: true
-  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
+  add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
+  add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "contacts", force: true do |t|
     t.string   "subject"
@@ -56,7 +56,12 @@ ActiveRecord::Schema.define(version: 20141205033056) do
     t.integer  "ranking",     default: 999
   end
 
-  add_index "departures", ["tour_id"], name: "index_departures_on_tour_id"
+  add_index "departures", ["tour_id"], name: "index_departures_on_tour_id", using: :btree
+
+  create_table "expenses", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tours", force: true do |t|
     t.string   "name"
