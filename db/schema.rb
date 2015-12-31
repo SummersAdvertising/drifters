@@ -59,6 +59,11 @@ ActiveRecord::Schema.define(version: 20151229050413) do
   add_index "departures", ["tour_id"], name: "index_departures_on_tour_id", using: :btree
 
   create_table "expenses", force: true do |t|
+    t.string   "name"
+    t.string   "fee_1"
+    t.string   "fee_2"
+    t.string   "memo"
+    t.string   "other"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

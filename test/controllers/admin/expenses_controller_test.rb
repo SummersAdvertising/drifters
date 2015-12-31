@@ -2,7 +2,7 @@ require 'test_helper'
 
 class Admin::ExpensesControllerTest < ActionController::TestCase
   setup do
-    @admin_expense = admin_expenses(:one)
+    @expense = admin_expenses(:one)
   end
 
   test "should get index" do
@@ -25,23 +25,23 @@ class Admin::ExpensesControllerTest < ActionController::TestCase
   end
 
   test "should show admin_expense" do
-    get :show, id: @admin_expense
+    get :show, id: @expense
     assert_response :success
   end
 
   test "should get edit" do
-    get :edit, id: @admin_expense
+    get :edit, id: @expense
     assert_response :success
   end
 
   test "should update admin_expense" do
-    patch :update, id: @admin_expense, admin_expense: {  }
+    patch :update, id: @expense, admin_expense: {  }
     assert_redirected_to admin_expense_path(assigns(:admin_expense))
   end
 
   test "should destroy admin_expense" do
     assert_difference('Admin::Expense.count', -1) do
-      delete :destroy, id: @admin_expense
+      delete :destroy, id: @expense
     end
 
     assert_redirected_to admin_expenses_path

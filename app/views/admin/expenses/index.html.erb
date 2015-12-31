@@ -2,105 +2,51 @@
   <h2 class="left">行程費用</h2>
 </header>
 
-<article>              
-  <div class="button"> <a href="#" class="right highlight" style="color:#FFF;width:auto;padding:7px 20px;">新增行程費用<img src="/images/admin/add.png"></a></div>
+<article>
+  <div class="button"> <a href="/admin/expenses/new" class="right highlight" style="color:#FFF;width:auto;padding:7px 20px;">新增行程費用<img src="/images/admin/add.png"></a></div>
   <div class="list">
     <table width="100%" border="0" cellspacing="0" cellpadding="0">
       <tr class="title">
-          <td>行程名稱&amp;團費說明</td>
-          <td>其他費用</td>
-          <td>&nbsp;</td>
+        <td>行程名稱&amp;團費說明</td>
+        <td>其他費用</td>
+        <td>&nbsp;</td>
       </tr>
-      <tr class="list">        
-          <td width="35%" valign="top">
-            <h1>南非克魯格灌叢草原 5 天</h1><br>
-            <span>€ 1395</span><br>
-            <span></span>
-            <br><br>
-            <p>此價格為非洲當地行程費用，不包含台灣來回等機票、住宿費用</p>
-          </td>
-          <td width="50%">
-            四人協力車 $100<br>
-            沙丘滑沙 $200<br>
-            高空跳傘 $300<br>
-            <br>
-            其它參考費用：簽證 500<br>
-            <br>
-            注意事項： 2016年有行程變動，從12天改成17天。
-          </td>
-          <td valign="top">
-            <div class="tool"><a href="expense-edit.html" class="edit" title="編輯"></a><a class="delete" title="刪除"></a></div>
-          </td>
-      </tr>
-      <tr class="list">        
-          <td width="35%" valign="top">
-            <h1>南非生態探索之旅 18 天</h1><br>
-            <span>2015：€ 1395</span><br>
-            <span>2016：€ 1795 + $600（XX費）</span>
-            <br><br>
-            <p>此價格為非洲當地行程費用，不包含台灣來回等機票、住宿費用</p>
-          </td>
-          <td width="50%">
-            四人協力車 $100<br>
-            沙丘滑沙 $200<br>
-            高空跳傘 $300<br>
-            沙丘滑沙 $200<br>
-            高空跳傘 $300<br>
-            <br>
-            其它參考費用：簽證 500<br>
-            <br>
-            注意事項： 2016年有行程變動，從12天改成17天。
-          </td>
-          <td valign="top">
-            <div class="tool"><a href="expense-edit.html" class="edit" title="編輯"></a><a class="delete" title="刪除"></a></div>
-          </td>
-      </tr>
-      <tr class="list">        
-          <td width="35%" valign="top">
-            <h1>納米比亞秘境野營 17 天</h1><br>
-            <span>2015：€ 1395</span><br>
-            <span>2016：€ 1795 + $600（XX費）</span>
-            <br><br>
-            <p></p>
-          </td>
-          <td width="50%">
-            四人協力車 $100<br>
-            沙丘滑沙 $200<br>
-            高空跳傘 $300<br>
-            沙丘滑沙 $200<br>
-            高空跳傘 $300<br>
-            <br>
-            其它參考費用：簽證 500<br>
-            <br>
-            注意事項： 2016年有行程變動，從12天改成17天。
-          </td>
-          <td valign="top">
-            <div class="tool"><a href="expense-edit.html" class="edit" title="編輯"></a><a class="delete" title="刪除"></a></div>
-          </td>
-      </tr>
-      <tr class="list">        
-          <td width="35%" valign="top">
-            <h1>烏干達越野探索 12 天</h1><br>
-            <span>2015：€ 1395</span><br>
-            <span>2016：€ 1795 + $600（XX費）</span>
-            <br><br>
-            <p></p>
-          </td>
-          <td width="50%">
-            四人協力車 $100<br>
-            沙丘滑沙 $200<br>
-            高空跳傘 $300<br>
-            沙丘滑沙 $200<br>
-            高空跳傘 $300<br>
-            <br>
-            其它參考費用：簽證 500<br>
-            <br>
-            注意事項： 2016年有行程變動，從12天改成17天。
-          </td>
-          <td valign="top">
-            <div class="tool"><a href="expense-edit.html" class="edit" title="編輯"></a><a class="delete" title="刪除"></a></div>
-          </td>
-      </tr>
+      <% @expenses.each do |expense| %>
+        <tr id="<%= dom_id(expense) %>" class="list">
+            <td width="35%" valign="top">
+              <h1><%= expense.name %></h1><br>
+              <span><%= expense.fee_1 %></span><br>
+              <span><%= expense.fee_2 %></span>
+              <br><br>
+              <p><%= expense.memo %></p>
+            </td>
+            <td width="50%">
+              <%= expense.other %>
+            </td>
+            <td valign="top">
+              <div class="tool"><a href="/admin/expenses/<%= expense.id %>/edit" class="edit" title="編輯"></a><a class="delete" title="刪除"></a></div>
+            </td>
+        </tr>
+      <% end %>
     </table>
-  </div>      
+  </div>
 </article>
+
+<script>
+  $(document).ready(function() {
+    $('.delete').click(function() {
+      if (confirm("確定刪除本行程？")) {
+        $dom = $(this).closest('tr');
+        id = $dom.attr('id').replace('expense_', '');
+        url = '/admin/expenses/' + id;
+        $.ajax({
+          url: url,
+          type: 'DELETE',
+          success: function() {
+            $dom.fadeOut();
+          }
+        })
+      }
+    })
+  })
+</script>

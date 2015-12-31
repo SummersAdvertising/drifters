@@ -1,42 +1,60 @@
 <header>
-  <h2 class="left">行程費用</h2>  
+  <h2 class="left">行程費用</h2>
 </header>
-<article>              
+<article>
   <div class="form">
-    <table width="100%" border="0" cellspacing="0" cellpadding="0">
-      <tr>
-          <td width="10%">行程名稱：</td>
-          <td width="60%"><input type="text" name="textfield" class="text" placeholder="南非克魯格灌叢草原 5 天"></td>
-          <td>&nbsp;</td>         
-      </tr>
-      <tr>
-          <td>團費：</td>
-          <td>
-            <input type="text" class="text" placeholder="2015：€ 1395，若不分年度，請填此欄即可">
-          </td>
-          <td>&nbsp;</td> 
-      </tr>
-      <tr>
-          <td>&nbsp;</td>
-          <td>
-            <input type="text" name="" class="text" placeholder="2016：€ 1795 + $600（XX費），若不分年度，此欄空白">
-          </td>
-          <td>&nbsp;</td>         
-      </tr>
-      <tr>
-          <td>團費備註：</td>
-          <td><input type="text" class="text"></td>
-          <td>&nbsp;</td> 
-      </tr>
-      <tr>
-          <td valign="top">其他費用：</td>
-          <td><textarea name="" rows="12"></textarea></td>
-          <td>&nbsp;</td>         
-      </tr>
-    </table>
-  </div>
-  <div class="button">
-    <a href="#" class="left"><img src="/images/admin/left.png">返回</a>
-    <a href="#" class="right highlight" style="color:#FFF;width:auto;padding:7px 20px;">儲存<img src="/images/admin/add.png"></a>
-  </div>      
+    <form action='/admin/expenses/<%= @expense.id %>' method='POST'>
+      <input type="hidden" name="_method" value="put" />
+
+      <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td width="10%">行程名稱：</td>
+            <td width="60%"><input type="text" name="expense[name]" class="text" placeholder="南非克魯格灌叢草原 5 天" value=<%= @expense.name %>></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>團費：</td>
+            <td>
+              <input type="text" class="text" name="expense[fee_1]" placeholder="2015：€ 1395，若不分年度，請填此欄即可" value=<%= @expense.fee_1 %>>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>&nbsp;</td>
+            <td>
+              <input type="text" class="text" name="expense[fee_2]"  placeholder="2016：€ 1795 + $600（XX費），若不分年度，此欄空白" value=<%=@expense.fee_2 %>>
+            </td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td>團費備註：</td>
+            <td><input type="text" class="text" name="expense[memo]" value=<%= @expense.memo %>></td>
+            <td>&nbsp;</td>
+        </tr>
+        <tr>
+            <td valign="top">其他費用：</td>
+            <td><textarea name="expense[other]" rows="12"><%= @expense.other %></textarea></td>
+            <td>&nbsp;</td>
+        </tr>
+      </table>
+    </div>
+    <div class="button">
+      <a href="#" class="left"><img src="/images/admin/left.png">返回</a>
+      <a href="#" class="submit right highlight" style="color:#FFF;width:auto;padding:7px 20px;">儲存<img src="/images/admin/save.png"></a>
+    </div>
+  </form>
 </article>
+
+<script>
+  $(document).ready(function() {
+    $('.submit').click(function() {
+      $('form').submit();
+      // $.ajax({
+      //   url: '/admin/expenses',
+      //   type: 'POST',
+      //   data: 'aabc'
+      // })
+      return false;
+    })
+  })
+</script>
