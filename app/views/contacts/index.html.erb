@@ -1,6 +1,6 @@
 <%= stylesheet_link_tag    '/css/travel.css', media: 'all', 'data-turbolinks-track' => true %>
 <script src="/js/jquery-ui.min.js"></script>
-<script src="/js/travel.js"></script> 
+<script src="/js/travel.js"></script>
 <article>
   <div class="container">
     <ul id="tab">
@@ -10,7 +10,7 @@
     </ul>
     <div id="content" class="row">
     <div class="col-md-10 col-md-offset-1">
-      <section id="form">        
+      <section id="form">
           <h3>報名表<span>＊號為必填</span></h3>
           <p>收到您的資料後，我們將儘快與您聯絡，謝謝。</p>
           <%= form_for(@contact, :url => contacts_path(), html: { id: "newthiscontact" } ) do |f| %>
@@ -24,9 +24,9 @@
                 <td>
                   <% @genders.each_with_index do | gender, index | %>
                     <% if index == 0 %>
-                      <%= f.radio_button :gender, gender[0], checked: true %> 
+                      <%= f.radio_button :gender, gender[0], checked: true %>
                     <% else %>
-                      <%= f.radio_button :gender, gender[0] %> 
+                      <%= f.radio_button :gender, gender[0] %>
                     <% end %>
                     <label class="checkbox-inline">
                       <%= gender[1] %>
@@ -52,14 +52,14 @@
                   <% @tours.each_with_index do | tour, index | %>
                     <div class="col-sm-4">
                       <label class="checkbox-inline">
-                      <%= f.check_box :subject, { :multiple => true, :name => "contact[subject][]" }, tour.name, nil %> 
+                      <%= f.check_box :subject, { :multiple => true, :name => "contact[subject][]" }, tour.name, nil %>
                         <%= tour.name %>
                       </label>
                     </div>
                   <% end %>
                     <div class="col-sm-4">
                     <label class="checkbox-inline">
-                      <input id="contact_subject_18" name="contact[subject][]" type="checkbox" value="尚未決定"> 
+                      <input id="contact_subject_18" name="contact[subject][]" type="checkbox" value="尚未決定">
                       尚未決定
                     </label>
                     </div>
@@ -88,116 +88,32 @@
           <% end %>
       </section>
       <section id="expenses">
-        <div class="expense">
-          <h3>南非克魯格灌叢草原 5 天</h3>
-          <div class="row">
-            <div class="col-sm-4">
-              <h4>團費</h4>
-              <div class="price">
-                € 1395
+        <% @expenses.each do |expense| %>
+          <div class="expense">
+            <h3><%= expense.name %></h3>
+            <div class="row">
+              <div class="col-sm-4">
+                <h4>團費</h4>
+                <div class="price year">
+                  <%= expense.fee_1 %>
+                  <% if expense.fee_2.present? %>
+                    <hr>
+                    <%= expense.fee_2 %>
+                  <% end %>
+                </div>
+                <p class="priceIntro">
+                  <%= expense.memo %>
+                </p>
               </div>
-              <p class="priceIntro">
-                此價格為非洲當地行程費用，不包含台灣來回等機票、住宿費用
-              </p>
-            </div>
-            <div class="col-sm-8">
-              <h4>其他費用</h4>
-              <div class="elsePrice">
-                自費活動：<br>
-                四人協力車   $100<br>
-                沙丘滑沙   $200<br>
-                高空跳傘   $300<br>
-                <br>
-                其它參考費用：簽證 500<br>
-                <br>
-                注意事項： 2016年有行程變動，從12天改成17天。
-              </div>
-            </div>
-          </div>
-        </div><!--expense end-->
-        <div class="expense">
-          <h3>南非生態探索之旅 18 天</h3>
-          <div class="row">
-            <div class="col-sm-4">
-              <h4>團費</h4>
-              <div class="price year">
-                2015：€ 1395
-                <hr>
-                2016：€ 1795 + $600（XX費）
-              </div>
-              <p class="priceIntro">
-                此價格為非洲當地行程費用，不包含台灣來回等機票、住宿費用
-              </p>
-            </div>
-            <div class="col-sm-8">
-              <h4>其他費用</h4>
-              <div class="elsePrice">
-                自費活動：<br>
-                四人協力車   $100<br>
-                沙丘滑沙   $200<br>
-                高空跳傘   $300<br>
-                沙丘滑沙   $200<br>
-                高空跳傘   $300<br>
-                <br>
-                其它參考費用：簽證 500<br>
-                <br>
-                注意事項： 2016年有行程變動，從12天改成17天。
+              <div class="col-sm-8">
+                <h4>其他費用</h4>
+                <div class="elsePrice">
+                  <%= raw expense.other.gsub("\r\n", "<br/>") %>
+                </div>
               </div>
             </div>
           </div>
-        </div><!--expense end-->
-        <div class="expense">
-          <h3>納米比亞秘境野營 17 天</h3>
-          <div class="row">
-            <div class="col-sm-4">
-              <h4>團費</h4>
-              <div class="price year">
-                2015：€ 1395
-                <hr>
-                2016：€ 1795 + $600（XX費）
-              </div>
-              <p class="priceIntro"></p>
-            </div>
-            <div class="col-sm-8">
-              <h4>其他費用</h4>
-              <div class="elsePrice">
-                自費活動：<br>
-                四人協力車   $100<br>
-                沙丘滑沙   $200<br>
-                高空跳傘   $300<br>
-                <br>
-                其它參考費用：簽證 500<br>
-                注意事項： 2016年有行程變動，從12天改成17天。
-              </div>
-            </div>
-          </div>
-        </div><!--expense end-->
-        <div class="expense">
-          <h3>烏干達越野探索 12 天</h3>
-          <div class="row">
-            <div class="col-sm-4">
-              <h4>團費</h4>
-              <div class="price year">
-                2015：€ 1395
-                <hr>
-                2016：€ 1795 + $600（XX費）
-              </div>
-              <p class="priceIntro"></p>
-            </div>
-            <div class="col-sm-8">
-              <h4>其他費用</h4>
-              <div class="elsePrice">
-                自費活動：<br>
-                四人協力車   $100<br>
-                沙丘滑沙   $200<br>
-                高空跳傘   $300<br>
-                <br>
-                其它參考費用：簽證 500<br>
-                注意事項： 2016年有行程變動，從12天改成17天。
-              </div>
-            </div>
-          </div>
-        </div><!--expense end-->
+        <% end %>
       </section>
       <section id="date">
         <div id='contact_looking_for_all' style='display:none;'>ALL</div>
@@ -216,6 +132,6 @@
     </div>
   </div>
 </article>
-<script src="/js_plugins/jq_validation/jquery.validate.min.js"></script> 
-<script src="/js_plugins/jq_validation/messages_zh_TW.js"></script> 
+<script src="/js_plugins/jq_validation/jquery.validate.min.js"></script>
+<script src="/js_plugins/jq_validation/messages_zh_TW.js"></script>
 <script>$('#newthiscontact').validate();</script>

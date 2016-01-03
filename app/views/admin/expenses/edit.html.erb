@@ -9,26 +9,26 @@
       <table width="100%" border="0" cellspacing="0" cellpadding="0">
         <tr>
             <td width="10%">行程名稱：</td>
-            <td width="60%"><input type="text" name="expense[name]" class="text" placeholder="南非克魯格灌叢草原 5 天" value=<%= @expense.name %>></td>
+            <td width="60%"><input type="text" name="expense[name]" class="text" placeholder="南非克魯格灌叢草原 5 天" value="<%= @expense.name %>"></td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td>團費：</td>
             <td>
-              <input type="text" class="text" name="expense[fee_1]" placeholder="2015：€ 1395，若不分年度，請填此欄即可" value=<%= @expense.fee_1 %>>
+              <input type="text" class="text" name="expense[fee_1]" placeholder="2015：€ 1395，若不分年度，請填此欄即可" value="<%= @expense.fee_1 %>">
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td>&nbsp;</td>
             <td>
-              <input type="text" class="text" name="expense[fee_2]"  placeholder="2016：€ 1795 + $600（XX費），若不分年度，此欄空白" value=<%=@expense.fee_2 %>>
+              <input type="text" class="text" name="expense[fee_2]"  placeholder="2016：€ 1795 + $600（XX費），若不分年度，此欄空白" value="<%=@expense.fee_2 %>">
             </td>
             <td>&nbsp;</td>
         </tr>
         <tr>
             <td>團費備註：</td>
-            <td><input type="text" class="text" name="expense[memo]" value=<%= @expense.memo %>></td>
+            <td><input type="text" class="text" name="expense[memo]" value="<%= @expense.memo %>"></td>
             <td>&nbsp;</td>
         </tr>
         <tr>

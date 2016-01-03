@@ -21,7 +21,7 @@
               <p><%= expense.memo %></p>
             </td>
             <td width="50%">
-              <%= expense.other %>
+              <%= raw expense.other.gsub("\r\n", "<br/>") %>
             </td>
             <td valign="top">
               <div class="tool"><a href="/admin/expenses/<%= expense.id %>/edit" class="edit" title="編輯"></a><a class="delete" title="刪除"></a></div>
