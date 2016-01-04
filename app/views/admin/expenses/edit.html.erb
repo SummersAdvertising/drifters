@@ -39,7 +39,7 @@
       </table>
     </div>
     <div class="button">
-      <a href="#" class="left"><img src="/images/admin/left.png">返回</a>
+      <%= link_to image_tag("/images/admin/left.png")+"返回", admin_expenses_path(), class: "left" %>
       <a href="#" class="submit right highlight" style="color:#FFF;width:auto;padding:7px 20px;">儲存<img src="/images/admin/save.png"></a>
     </div>
   </form>
