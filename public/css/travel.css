@@ -579,7 +579,7 @@ margin:10% 0 0 0
 iframe {
 	display:none !important
 }
-.expense{background:#82735b;margin:0 0 2px 0;}
+.expense{background:#82735b;margin:0 0 20px 0;}
 .expense h3{background:#a6937c;color:#FFF;padding:0 0 0 15px;font:300 1.3em/50px 微軟正黑體, Microsoft JhengHei;margin:0 0 28px 0;}
 .expense .row{margin:0;padding:0 28px 40px 0;}
 .expense .col-sm-4{width:40%;padding:0 30px 30px 30px;color:#FFF;}
