@@ -90,7 +90,7 @@
       <section id="expenses">
         <% @expenses.each do |expense| %>
           <div class="expense">
-            <h3><%= expense.name %></h3>
+            <h3><%= link_to expense.name, expense.url %></h3>
             <div class="row">
               <div class="col-sm-4">
                 <h4>團費</h4>

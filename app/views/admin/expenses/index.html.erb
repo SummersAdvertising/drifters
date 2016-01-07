@@ -17,7 +17,7 @@
       <% @expenses.each do |expense| %>
         <tr id="<%= dom_id(expense) %>" class="list">
             <td width="35%" valign="top">
-              <h1><%= expense.name %></h1><br>
+              <h1><%= link_to expense.name, expense.url %></h1><br>
               <span><%= expense.fee_1 %></span><br>
               <span><%= expense.fee_2 %></span>
               <br><br>
